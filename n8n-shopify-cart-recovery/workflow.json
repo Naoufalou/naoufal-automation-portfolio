@@ -1,0 +1,334 @@
+{
+  "name": "Récupération de panier abandonné multi-canal (email + WhatsApp)",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "shopify-panier-abandonne",
+        "responseMode": "onReceived",
+        "options": {}
+      },
+      "id": "8809f261-48c3-4317-b291-45a7867625fb",
+      "name": "Webhook Shopify (panier abandonné)",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -240,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "8cfd83f1-adfc-4c7e-836c-141d5dbb45f7",
+              "leftValue": "={{ $json.email }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty"
+              }
+            },
+            {
+              "id": "40687174-2326-4a1a-be92-5056b8691302",
+              "leftValue": "={{ $json.abandoned_checkout_url }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "5c21db69-2ece-4215-8904-97121b992c8e",
+      "name": "Filtre panier abandonné",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "resume": "timeInterval",
+        "amount": 2,
+        "unit": "hours",
+        "options": {}
+      },
+      "id": "1115aead-597b-474f-9944-306e5df5da77",
+      "name": "Attente 2 heures",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        240,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "2b3ef5d9-f7c3-42be-a160-ba1a544bc461",
+              "name": "emailTo",
+              "value": "={{ $json.email }}",
+              "type": "string"
+            },
+            {
+              "id": "ecbfd8a0-a938-43eb-9439-d2043e5796e1",
+              "name": "emailSubject",
+              "value": "Votre panier vous attend 🛒",
+              "type": "string"
+            },
+            {
+              "id": "dc521bc0-095d-44a1-8911-b2e81178194b",
+              "name": "emailHtml",
+              "value": "<p>Bonjour 👋</p><p>Vous avez laissé <strong>{{ $json.line_items.length }} article(s)</strong> dans votre panier pour un total de <strong>{{ $json.total_price }}</strong>.</p><p>Votre panier expire bientôt. Finalisez votre commande en 1 minute :</p><p style=\"text-align:center\"><a href=\"{{ $json.abandoned_checkout_url }}\" style=\"background:#5c6ac4;color:#fff;padding:12px 24px;border-radius:6px;text-decoration:none;\">Finaliser ma commande</a></p><p>À très vite,<br/>L'équipe Votre Boutique</p>",
+              "type": "string"
+            },
+            {
+              "id": "7de2c5ff-ee3d-4bc8-95d2-e913e59aab36",
+              "name": "checkoutUrl",
+              "value": "={{ $json.abandoned_checkout_url }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": false,
+        "options": {}
+      },
+      "id": "1686de0a-1800-40ec-92d7-de6618dc65d7",
+      "name": "Préparer email (relance 1)",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        480,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.brevo.com/v3/smtp/email",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"sender\": { \"name\": \"Votre Boutique\", \"email\": \"contact@votreboutique.com\" },\n  \"to\": [ { \"email\": \"={{ $json.emailTo }}\" } ],\n  \"subject\": \"={{ $json.emailSubject }}\",\n  \"htmlContent\": \"={{ $json.emailHtml }}\"\n}",
+        "options": {}
+      },
+      "id": "9cdbe95b-b5a3-495a-b2a9-c317d6cbd495",
+      "name": "Envoyer email (Brevo)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        720,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "resume": "timeInterval",
+        "amount": 24,
+        "unit": "hours",
+        "options": {}
+      },
+      "id": "7ffb0d47-25ef-4944-b28d-b0d83b392fb3",
+      "name": "Attente 24 heures",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        960,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "0dbe3f6b-4644-422e-b55e-e8beb33c10a7",
+              "name": "waAccountSid",
+              "value": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "type": "string"
+            },
+            {
+              "id": "7e25325e-eac3-4d47-a26b-c28a154610ca",
+              "name": "waTo",
+              "value": "whatsapp:{{ $json.billing_address.phone }}",
+              "type": "string"
+            },
+            {
+              "id": "af46d701-f54a-4642-8486-1c3b9efeb0b6",
+              "name": "waFrom",
+              "value": "whatsapp:+14155238886",
+              "type": "string"
+            },
+            {
+              "id": "13f7b076-3902-4dd8-aa2d-a53a7dbcb561",
+              "name": "waBody",
+              "value": "Salut 👋 On te garde ton panier au chaud ! Termine ta commande ici : {{ $json.abandoned_checkout_url }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": false,
+        "options": {}
+      },
+      "id": "59224942-8537-4e18-9ebd-e1e4d9e88204",
+      "name": "Préparer WhatsApp (relance 2)",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1200,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.twilio.com/2010-04-01/Accounts/={{ $json.waAccountSid }}/Messages.json",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/x-www-form-urlencoded"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "keypair",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "To",
+              "value": "={{ $json.waTo }}"
+            },
+            {
+              "name": "From",
+              "value": "={{ $json.waFrom }}"
+            },
+            {
+              "name": "Body",
+              "value": "={{ $json.waBody }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "54bb6c27-bc7c-49c4-841e-ae01463c50df",
+      "name": "Envoyer WhatsApp (Twilio)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1440,
+        0
+      ]
+    }
+  ],
+  "connections": {
+    "Webhook Shopify (panier abandonné)": {
+      "main": [
+        [
+          {
+            "node": "Filtre panier abandonné",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filtre panier abandonné": {
+      "main": [
+        [
+          {
+            "node": "Attente 2 heures",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Attente 2 heures": {
+      "main": [
+        [
+          {
+            "node": "Préparer email (relance 1)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Préparer email (relance 1)": {
+      "main": [
+        [
+          {
+            "node": "Envoyer email (Brevo)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Envoyer email (Brevo)": {
+      "main": [
+        [
+          {
+            "node": "Attente 24 heures",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Attente 24 heures": {
+      "main": [
+        [
+          {
+            "node": "Préparer WhatsApp (relance 2)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Préparer WhatsApp (relance 2)": {
+      "main": [
+        [
+          {
+            "node": "Envoyer WhatsApp (Twilio)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "60b35d3e-dc3e-484c-becc-1dc87ba822dd",
+  "id": "8d602ffb-4a7f-4ed7-801f-618b76f57c90",
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "pinData": {},
+  "tags": []
+}

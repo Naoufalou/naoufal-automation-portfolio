@@ -1,0 +1,341 @@
+{
+  "name": "Rappel de rendez-vous (24h avant) + confirmation",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 1
+            }
+          ]
+        }
+      },
+      "id": "schedule-hourly",
+      "name": "Toutes les heures",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 2,
+      "position": [-440, -300]
+    },
+    {
+      "parameters": {
+        "resource": "event",
+        "operation": "getAll",
+        "calendar": {
+          "__rl": true,
+          "value": "primary",
+          "mode": "list",
+          "cachedResultName": "primary"
+        },
+        "returnAll": false,
+        "limit": 100,
+        "timeMin": "={{ $now }}",
+        "timeMax": "={{ $now.plus(24, 'hours') }}",
+        "options": {}
+      },
+      "id": "gcal-upcoming",
+      "name": "RDV des prochaines 24h",
+      "type": "n8n-nodes-base.googleCalendar",
+      "typeVersion": 2,
+      "position": [-200, -300]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": false,
+        "values": {
+          "string": [
+            {
+              "name": "patientName",
+              "value": "={{ $json.summary || 'Patient' }}"
+            },
+            {
+              "name": "phone",
+              "value": "={{ (((($json.description || '').match(/(?:t[eé]l|phone|gsm|mobile|portable)[^+0-9]*([+0-9 ().-]{6,})/i)) || [])[1] || '').replace(/[ ().-]/g, '') }}"
+            },
+            {
+              "name": "email",
+              "value": "={{ ((($json.description || '').match(/(?:e?-?mail|courriel)[^a-z0-9@._%+-]*([a-z0-9._%+-]+@[a-z0-9.-]+[.][a-z]{2,})/i)) || [])[1] || '' }}"
+            },
+            {
+              "name": "dateFr",
+              "value": "={{ ($json.start.dateTime || $json.start.date) ? DateTime.fromISO($json.start.dateTime || $json.start.date).setLocale('fr').toFormat('cccc d LLLL yyyy') : 'date à confirmer' }}"
+            },
+            {
+              "name": "timeFr",
+              "value": "={{ $json.start.dateTime ? DateTime.fromISO($json.start.dateTime).setLocale('fr').toFormat('HH:mm') : '' }}"
+            },
+            {
+              "name": "confirmLink",
+              "value": "={{ ($env.CONFIRM_WEBHOOK_URL || 'https://votre-n8n.example.com/webhook/confirm') + '?event=' + ($json.id || '') + '&action=confirmer&patient=' + encodeURIComponent($json.summary || '') + '&date=' + encodeURIComponent($json.start.dateTime || $json.start.date || '') }}"
+            },
+            {
+              "name": "cancelLink",
+              "value": "={{ ($env.CONFIRM_WEBHOOK_URL || 'https://votre-n8n.example.com/webhook/confirm') + '?event=' + ($json.id || '') + '&action=annuler&patient=' + encodeURIComponent($json.summary || '') + '&date=' + encodeURIComponent($json.start.dateTime || $json.start.date || '') }}"
+            }
+          ]
+        },
+        "options": {
+          "dotNotation": true
+        }
+      },
+      "id": "set-prepare",
+      "name": "Préparer le rappel",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [40, -300]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": false,
+        "values": {
+          "string": [
+            {
+              "name": "whatsappMessage",
+              "value": "={{ 'Bonjour ' + ($json.patientName || '') + ' 👋 Rappel : votre rendez-vous au cabinet est prévu le ' + $json.dateFr + ($json.timeFr ? ' à ' + $json.timeFr : '') + '. Confirmez votre présence : ' + $json.confirmLink + ' — Annulez : ' + $json.cancelLink }}"
+            },
+            {
+              "name": "emailSubject",
+              "value": "={{ 'Rappel de rendez-vous - ' + $json.dateFr }}"
+            },
+            {
+              "name": "emailMessage",
+              "value": "={{ '<p>Bonjour ' + ($json.patientName || '') + ',</p><p>Votre rendez-vous au cabinet est prévu le ' + $json.dateFr + ($json.timeFr ? ' à ' + $json.timeFr : '') + '.</p><p>Confirmer ma présence : ' + $json.confirmLink + '<br>Annuler mon rendez-vous : ' + $json.cancelLink + '</p><p>À bientôt,<br>Le secrétariat</p>' }}"
+            }
+          ]
+        },
+        "options": {
+          "dotNotation": true
+        }
+      },
+      "id": "set-messages",
+      "name": "Composer les messages",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [280, -300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose"
+          },
+          "conditions": [
+            {
+              "id": "cond-phone",
+              "leftValue": "={{ $json.phone }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "cond-email",
+              "leftValue": "={{ $json.email }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "id": "filter-contact",
+      "name": "Garder les RDV avec contact",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2,
+      "position": [520, -300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose"
+          },
+          "conditions": [
+            {
+              "id": "cond-phone",
+              "leftValue": "={{ $json.phone }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "if-channel",
+      "name": "WhatsApp ou Email ?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [760, -300]
+    },
+    {
+      "parameters": {
+        "requestMethod": "POST",
+        "url": "={{ 'https://graph.facebook.com/v19.0/' + $env.WHATSAPP_PHONE_ID + '/messages' }}",
+        "authentication": "none",
+        "jsonParameters": true,
+        "headerParametersJson": "={{ JSON.stringify({ 'Authorization': 'Bearer ' + $env.WHATSAPP_TOKEN, 'Content-Type': 'application/json' }) }}",
+        "bodyParametersJson": "={{ JSON.stringify({ messaging_product: 'whatsapp', to: $json.phone, type: 'text', text: { body: $json.whatsappMessage } }) }}",
+        "options": {
+          "bodyContentType": "json"
+        }
+      },
+      "id": "wa-send",
+      "name": "Envoyer WhatsApp",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [1000, -400]
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "send",
+        "sendTo": "={{ $json.email }}",
+        "subject": "={{ $json.emailSubject }}",
+        "emailType": "html",
+        "message": "={{ $json.emailMessage }}",
+        "options": {}
+      },
+      "id": "gmail-send",
+      "name": "Envoyer Email",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2,
+      "position": [1000, -180]
+    },
+    {
+      "parameters": {
+        "httpMethod": "GET",
+        "path": "confirm",
+        "responseMode": "onReceived",
+        "options": {}
+      },
+      "id": "webhook-confirm",
+      "name": "Recevoir la confirmation",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [-440, 60]
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "sendMessage",
+        "chatId": "={{ $env.CLINIC_TELEGRAM_CHAT_ID }}",
+        "text": "={{ '📅 Confirmation RDV — Patient : ' + ($json.query.patient ? decodeURIComponent($json.query.patient) : 'inconnu') + ' — Date : ' + ($json.query.date ? decodeURIComponent($json.query.date) : '') + ' — Statut : ' + (($json.query.action === 'annuler') ? 'ANNULÉ ❌' : 'CONFIRMÉ ✅') }}",
+        "additionalFields": {}
+      },
+      "id": "telegram-notify",
+      "name": "Notifier le secrétariat",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [-200, 60]
+    }
+  ],
+  "connections": {
+    "Toutes les heures": {
+      "main": [
+        [
+          {
+            "node": "RDV des prochaines 24h",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RDV des prochaines 24h": {
+      "main": [
+        [
+          {
+            "node": "Préparer le rappel",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Préparer le rappel": {
+      "main": [
+        [
+          {
+            "node": "Composer les messages",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Composer les messages": {
+      "main": [
+        [
+          {
+            "node": "Garder les RDV avec contact",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Garder les RDV avec contact": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp ou Email ?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp ou Email ?": {
+      "main": [
+        [
+          {
+            "node": "Envoyer WhatsApp",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Envoyer Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Recevoir la confirmation": {
+      "main": [
+        [
+          {
+            "node": "Notifier le secrétariat",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "active": false,
+  "pinData": {},
+  "tags": []
+}
