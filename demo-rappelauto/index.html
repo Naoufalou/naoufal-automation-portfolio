@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RappelAuto 24h — Démo</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font-family: -apple-system, "Segoe UI", Roboto, sans-serif; max-width: 760px; margin: 0 auto; padding: 2rem; line-height: 1.6; }
+  .hero { border: 1px solid #0f9b6e; border-radius: 12px; padding: 1.5rem; background: #0f9b6e10; }
+  h1 { margin: 0 0 .5rem; }
+  .badge { display: inline-block; background: #0f9b6e; color: #fff; padding: .2rem .6rem; border-radius: 20px; font-size: .8rem; margin-right: .4rem; }
+  .metric { display: flex; gap: 1.5rem; margin: 1.5rem 0; }
+  .metric div { flex: 1; text-align: center; border: 1px solid #ccc; border-radius: 8px; padding: 1rem; }
+  .metric b { font-size: 1.6rem; display: block; }
+  pre { background: #111; color: #0f0; padding: 1rem; border-radius: 8px; overflow-x: auto; }
+  .cta { display: inline-block; background: #0f9b6e; color: #fff; padding: .8rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="hero">
+  <h1>🦷 RappelAuto 24h</h1>
+  <span class="badge">n8n</span><span class="badge">WhatsApp</span><span class="badge">Email</span><span class="badge">Google Calendar</span>
+  <p>Workflow n8n clé-en-main : rappel automatique 24h avant chaque rendez-vous, confirmation en 1 clic, relance si silence. Pensé pour les cabinets dentaires et médicaux.</p>
+</div>
+
+<div class="metric">
+  <div><b>-60%</b>de no-shows</div>
+  <div><b>15 min</b>d'installation</div>
+  <div><b>0 €</b>de node payant</div>
+</div>
+
+<h2>Comment ça marche</h2>
+<pre>ScheduleTrigger (quotidien)
+  └─ Google Calendar : lire les RDV de demain
+       └─ IF : patient a confirmé ?
+            ├─ OUI → Set : statut "confirmé"
+            └─ NON → HTTP Request : envoi WhatsApp + email
+                     └─ Telegram : notifier le secrétariat</pre>
+
+<h2>Démo Python autonome (sans n8n)</h2>
+<p>Version script du même principe, exécutable partout :</p>
+<pre>$ python rappelauto.py --agenda agenda.csv --jours 1
+
+=== 3 rappel(s) à envoyer pour le 2026-09-05 ===
+[Dupont Jean] +336...
+  WhatsApp : Bonjour Dupont Jean, rappel : votre rendez-vous est demain...
+  Email    : Objet : Rappel de votre rendez-vous...</pre>
+
+<p><a class="cta" href="https://github.com/Naoufalou/naoufal-automation-portfolio">Voir le workflow JSON complet →</a></p>
+</body>
+</html>
