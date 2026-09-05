@@ -1,0 +1,13 @@
+node_modules/
+.next/
+.vercel/
+.env*
+!.env.example
+*.tsbuildinfo
+__pycache__/
+*.pyc
+.DS_Store
+playwright-report/
+test-results/
+.catalog-review/
+.vercel
