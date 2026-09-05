@@ -1,0 +1,22 @@
+{
+  "name": "naoufal-automation-portfolio",
+  "private": true,
+  "workspaces": [
+    "apps/portfolio"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace @naoufal/portfolio",
+    "build": "npm run build --workspace @naoufal/portfolio",
+    "start": "npm run start --workspace @naoufal/portfolio",
+    "typecheck": "npm run typecheck --workspace @naoufal/portfolio",
+    "check:content": "node scripts/check-content.mjs",
+    "check:links": "node scripts/check-links.mjs",
+    "sync:catalog": "node scripts/sync-catalog.mjs"
+  },
+  "engines": {
+    "node": ">=22 <25"
+  },
+  "devDependencies": {
+    "prettier": "^3.8.1"
+  }
+}

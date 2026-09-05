@@ -1,63 +1,47 @@
-# Naoufal Ou — Automatisation & Agents IA (Portfolio)
+# Naoufal Ou — Développeur IA & entrepreneur
 
-> **n8n · Make · Zapier · Agents IA · LLM locaux · Python · OSINT/Graphify**
-> Je transforme les process manuels en workflows autonomes. Freelance, réponse < 24h.
+Portfolio d’applications, d’agents IA et d’automatisations, avec un catalogue de 43 réalisations et expérimentations.
 
----
+**[Découvrir le portfolio](https://naoufal-automation-portfolio.vercel.app)** · [Contact](mailto:naoufal.ou7@gmail.com) · [LinkedIn](https://www.linkedin.com/in/naoufal-ou-14a071150)
 
-## Ce que je fais
+## Organisation
 
-| Domaine | Exemples concrets |
-|---------|-------------------|
-| **Automatisation no-code** | Rappels RDV (-60% no-shows), récupération panier abandonné (+15% CA), reporting auto |
-| **Agents IA** | Orchestration multi-agents, chatbots, pipelines de raisonnement, agents locaux |
-| **LLM locaux** | Déploiement de modèles open-source optimisés (Ollama, 6 Go VRAM, 64K contexte) |
-| **Intégrations API** | CRM, agenda, WhatsApp, email, Shopify, nœuds Python custom |
-| **Veille & données** | OSINT multi-sources, graphes de connaissance (Graphify), cartographie marché |
+- `apps/portfolio` : site Next.js App Router, React, TypeScript et Tailwind CSS.
+- `content/projects.json` : catalogue éditorial public, technologies, état et liens.
+- `scripts` : validation du contenu, contrôle des liens et export de métadonnées publiques pour revue.
+- `docs` : maintenance, publication et limites de vérification.
+- Les dossiers de démonstration historiques ci-dessous conservent leur emplacement.
 
----
+Les applications privées restent dans leurs dépôts respectifs. Ce dépôt centralise leurs fiches publiques et les démonstrateurs déjà publics, sans importer de mémoire personnelle, de données clients ou de configuration privée.
 
-## Projets phares (démo en direct)
+## Démonstrateurs publics
 
-### 1. `n8n-dental-reminder/` — Rappel de rendez-vous automatique
-Workflow n8n clé-en-main pour cabinets dentaires/médicaux : rappel 24h avant (WhatsApp + email), confirmation en 1 clic, relance si silence, notification Telegram au secrétariat. **10 nœuds, 100% nodes gratuits, installable en 15 min.**
+| Réalisation | Contenu |
+|---|---|
+| [Rappels de rendez-vous](n8n-dental-reminder/) | Workflow n8n de 10 nœuds, intégrations à configurer |
+| [Relance Shopify](n8n-shopify-cart-recovery/) | Workflow n8n de 8 nœuds |
+| [CRM freelance](notion-freelance-crm/) | Spécification Notion en Markdown |
+| [Prompts recrutement](prompt-pack-recruiter/) | Pack éditorial de prompts |
+| [Agent local](demo-agent-local/) | Démonstrateur Python et Ollama |
+| [RappelAuto](demo-rappelauto/) | Génération de rappels depuis un agenda CSV |
+| [Human Browser](human-browser/) | Scripts Python et Patchright |
 
-→ [`workflow.json`](n8n-dental-reminder/workflow.json)
+## Développement
 
-### 2. `n8n-shopify-cart-recovery/` — Récupération de panier abandonné
-Relance multi-canal (email +2h, WhatsApp +24h) des paniers abandonnés Shopify, avec filtre anti-faux-positifs. **8 nœuds, détection webhook temps réel.**
+Node.js 22 et npm sont requis.
 
-→ [`workflow.json`](n8n-shopify-cart-recovery/workflow.json)
+```sh
+npm ci
+npm run dev
+npm run check:content
+npm run build
+npm run typecheck
+```
 
-### 3. `notion-freelance-crm/` — CRM freelance (template Notion)
-Base Clients + Projets + Factures liées, avec formules de relance automatique. Fini les clients qu'on oublie de relancer.
+Le site démarre sur http://127.0.0.1:3000. Les polices sont embarquées localement. Le formulaire de contact prépare un email dans la messagerie du visiteur ; aucun serveur de collecte n’est installé.
 
-### 4. `prompt-pack-recruiter/` — 15 prompts IA pour recruteurs
-Sourcing, tri CV, outreach, entretiens — prompts templatisés prêts à l'emploi.
+## Publication
 
----
+Vercel : projet `naoufal-automation-portfolio`, racine `apps/portfolio`, framework Next.js, branche de production `master`. Voir [le guide](docs/maintenance.md).
 
-## Stack technique
-
-- **Automatisation** : n8n, Make, Zapier, webhooks, REST
-- **IA** : Ollama (Qwen3, DeepHermes, Llama — abliterated), orchestration multi-agents (Hermes), Graphify
-- **Code** : Python (scripts, apps, nœuds custom, intégrations API)
-- **Data** : OSINT multi-sources (clear web + Tor), scraping, veille
-
----
-
-## Méthode
-
-1. **Audit** : je pars de la douleur réelle (heures perdues, erreurs, no-shows)
-2. **Build** : workflow clé-en-main, documenté, maintenable (pas de hack)
-3. **Mesure** : je chiffre le gain (-60%, +15%, -80% saisie)
-
----
-
-## Me joindre
-
-Freelance — disponible pour missions n8n/automatisation/agents IA.
-- LinkedIn : [linkedin.com/in/naoufal](https://www.linkedin.com/in/naoufal)
-- Email : naoufal.ou7@gmail.com
-
-*Ce portfolio référence des projets réels, buildés et testés.*
+Les visuels du site sont des compositions illustratives, pas des captures d’interfaces en fonctionnement. Les états des projets sont explicités sur chaque fiche. Aucun résultat commercial chiffré n’est revendiqué sans mesure.
