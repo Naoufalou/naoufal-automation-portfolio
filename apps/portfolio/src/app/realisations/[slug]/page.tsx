@@ -60,7 +60,7 @@ export default async function Page({
       </div>
       <Art id={p.id} large />
       {p.gallery.length > 0 && (
-        <div className="project-gallery" aria-label="Visuels du concept">
+        <div className="project-gallery" aria-label="Galerie de visuels du projet">
           {p.gallery.map((image) => (
             <figure key={image.src}>
               <div className="gallery-frame">
@@ -121,7 +121,7 @@ export default async function Page({
           <p className="eyebrow detail-eyebrow">PÉRIMÈTRE DE LA PRÉSENTATION</p>
           <p className="muted">
             {p.demo
-              ? "Le site public était accessible lors de la vérification du 5 septembre 2026. Cela ne constitue pas un test complet de ses parcours métier."
+              ? "Le lien public répondait lors de la vérification du 30 septembre 2026. Cela ne constitue pas un test complet de ses parcours métier."
               : p.source
                 ? "Le code ou le document de démonstration est consultable sur GitHub. Les intégrations externes nécessitent leur propre configuration."
                 : p.status === "En exploration"
