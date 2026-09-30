@@ -1,13 +1,13 @@
 # Naoufal Ou — Développeur IA & entrepreneur
 
-Portfolio d’applications, d’agents IA et d’automatisations, avec un catalogue de 43 réalisations et expérimentations.
+Portfolio d’applications, d’agents IA et d’automatisations, avec un catalogue de 49 réalisations et expérimentations.
 
-**[Découvrir le portfolio](https://naoufal-automation-portfolio.vercel.app)** · [Contact](mailto:naoufal.ou7@gmail.com) · [LinkedIn](https://www.linkedin.com/in/naoufal-ou-14a071150)
+**[Découvrir le portfolio](https://naoufal-automation-portfolio.vercel.app)** · [Profil IT, Digital & IA](https://naoufal-automation-portfolio.vercel.app/profil) · [Contact](mailto:naoufal.ou7@gmail.com) · [LinkedIn](https://www.linkedin.com/in/naoufal-ou-14a071150)
 
 ## Organisation
 
 - `apps/portfolio` : site Next.js App Router, React, TypeScript et Tailwind CSS.
-- `content/projects.json` : catalogue éditorial public, technologies, état et liens.
+- `content/projects.json` : catalogue éditorial public, technologies, état, étapes, visuels et liens.
 - `scripts` : validation du contenu, contrôle des liens et export de métadonnées publiques pour revue.
 - `docs` : maintenance, publication et limites de vérification.
 - Les dossiers de démonstration historiques ci-dessous conservent leur emplacement.
@@ -44,4 +44,4 @@ Le site démarre sur http://127.0.0.1:3000. Les polices sont embarquées localem
 
 Vercel : projet `naoufal-automation-portfolio`, racine `apps/portfolio`, framework Next.js, branche de production `master`. Voir [le guide](docs/maintenance.md).
 
-Les visuels du site sont des compositions illustratives, pas des captures d’interfaces en fonctionnement. Les états des projets sont explicités sur chaque fiche. Aucun résultat commercial chiffré n’est revendiqué sans mesure.
+Les visuels de synthèse sont des compositions illustratives, pas des captures d’interfaces en fonctionnement. Les planches de concept sont légendées séparément. Les fiches explicitent les étapes et les validations restantes ; aucun résultat commercial chiffré n’est revendiqué sans mesure.

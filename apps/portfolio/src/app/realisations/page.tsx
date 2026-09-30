@@ -4,17 +4,17 @@ export default function Page() {
   return (
     <main className="section catalog-page">
       <p className="eyebrow">
-        LE CATALOGUE / APPLICATIONS, AUTOMATISATIONS & EXPÉRIMENTATIONS
+        PROJETS / RECHERCHE APPLIQUÉE · INGÉNIERIE · PRODUITS
       </p>
       <h1>
-        Du besoin
+        Explorer,
         <br />
-        <em>au produit.</em>
+        <em>construire, vérifier.</em>
       </h1>
       <p className="page-lead">
-        Une collection de projets web, desktop, mobile et IA. Chaque fiche
-        distingue le travail identifié, les démonstrateurs et les sites
-        accessibles.
+        Des systèmes agentiques, des expériences d’IA locale, des applications
+        et des outils de données. Chaque fiche sépare l’architecture, les étapes
+        construites, les visuels de projet et les validations encore ouvertes.
       </p>
       <Catalog />
     </main>

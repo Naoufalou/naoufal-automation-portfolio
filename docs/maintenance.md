@@ -16,6 +16,6 @@ Les pull requests peuvent recevoir une prévisualisation ; `master` est la branc
 
 ## Périmètre
 
-L’inventaire privé initial couvre davantage de fichiers et de variantes que le catalogue éditorial de 43 entrées. Il ne doit pas être publié. Les groupes regroupent les variantes connues pour éviter de les présenter comme autant de produits indépendants.
+L’inventaire privé initial couvre davantage de fichiers et de variantes que le catalogue éditorial de 49 entrées. Il ne doit pas être publié. Les groupes regroupent les variantes connues pour éviter de les présenter comme autant de produits indépendants. Les fiches détaillent les étapes connues et indiquent les validations restantes. Les captures de démonstration, concepts et schémas d’architecture sont légendés selon leur nature.
 
 Les sites externes accessibles ne sont pas des parcours métier intégralement testés. Les démonstrateurs n8n exigent des identifiants et paramètres propres à leur environnement. Les illustrations ne représentent ni métriques en temps réel ni résultats mesurés. Le formulaire ouvre un client email et n’envoie rien automatiquement.

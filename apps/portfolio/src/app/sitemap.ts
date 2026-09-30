@@ -1,8 +1,9 @@
-import projects from "../../../../content/projects.json";
+import { projects } from "../lib/projects";
 export default function sitemap() {
   return [
     "",
     "/realisations",
+    "/profil",
     "/contact",
     ...projects.map((p) => "/realisations/" + p.slug),
   ].map((path) => ({

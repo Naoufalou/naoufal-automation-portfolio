@@ -12,7 +12,25 @@
     "status": "Site accessible",
     "need": "",
     "features": [],
-    "value": ""
+    "value": "",
+    "steps": [
+      {
+        "title": "Définir le parcours",
+        "detail": "Landing e-commerce pour un nettoyant à sec, présentation du produit et des packs.",
+        "state": "Résumé du projet"
+      },
+      {
+        "title": "Réaliser les pages et fonctions",
+        "detail": "Landing e-commerce pour un nettoyant à sec, présentation du produit et des packs.",
+        "state": "Décrit dans la fiche"
+      },
+      {
+        "title": "Contrôler la publication",
+        "detail": "Lien public relevé lors de l’inventaire initial : https://cleanpromagic.lovable.app/. Revalider les formulaires et les parcours métier.",
+        "state": "Lien catalogué · test à refaire"
+      }
+    ],
+    "gallery": []
   },
   {
     "id": "L02",
@@ -27,7 +45,25 @@
     "status": "En exploration",
     "need": "",
     "features": [],
-    "value": ""
+    "value": "",
+    "steps": [
+      {
+        "title": "Repérer le projet",
+        "detail": "Projet distinct visible dans Lovable ; lien avec CleanPro à confirmer.",
+        "state": "Identifié"
+      },
+      {
+        "title": "Qualifier le périmètre",
+        "detail": "La fonction, le code et les dépendances nécessitent une revue avant description détaillée. Stack connue : Lovable ; stack source à exporter .",
+        "state": "À qualifier"
+      },
+      {
+        "title": "Valider le résultat",
+        "detail": "Aucun lien de démo n’est associé. Statut actuel relevé : En exploration. Vérifier le parcours réel avant de publier une promesse fonctionnelle.",
+        "state": "À vérifier"
+      }
+    ],
+    "gallery": []
   },
   {
     "id": "L03",
@@ -46,7 +82,35 @@
       "Mise en avant de la zone d’intervention.",
       "Parcours de contact depuis un site publié avec Lovable."
     ],
-    "value": "Une présence web centrée sur un besoin local précis et la prise de contact."
+    "value": "Une présence web centrée sur un besoin local précis et la prise de contact.",
+    "steps": [
+      {
+        "title": "Cadrer le besoin",
+        "detail": "Donner un accès direct à une offre de dépannage de batteries en Île-de-France.",
+        "state": "Documenté"
+      },
+      {
+        "title": "Étape 2 · Construire la réponse",
+        "detail": "Présentation du dépannage automobile et moto.",
+        "state": "Décrit dans la fiche"
+      },
+      {
+        "title": "Étape 3 · Construire la réponse",
+        "detail": "Mise en avant de la zone d’intervention.",
+        "state": "Décrit dans la fiche"
+      },
+      {
+        "title": "Étape 4 · Construire la réponse",
+        "detail": "Parcours de contact depuis un site publié avec Lovable.",
+        "state": "Décrit dans la fiche"
+      },
+      {
+        "title": "Valider et livrer",
+        "detail": "Lien de démonstration catalogué : https://depannbatterie.app/. Disponibilité et parcours à revalider avant toute promesse de fonctionnement.",
+        "state": "Lien catalogué · parcours à revalider"
+      }
+    ],
+    "gallery": []
   },
   {
     "id": "L04",
@@ -61,7 +125,25 @@
     "status": "Site accessible",
     "need": "",
     "features": [],
-    "value": ""
+    "value": "",
+    "steps": [
+      {
+        "title": "Définir le parcours",
+        "detail": "Site professionnel de réflexologie et de bien-être ; présentation des prestations et implantations.",
+        "state": "Résumé du projet"
+      },
+      {
+        "title": "Réaliser les pages et fonctions",
+        "detail": "Site professionnel de réflexologie et de bien-être ; présentation des prestations et implantations.",
+        "state": "Décrit dans la fiche"
+      },
+      {
+        "title": "Contrôler la publication",
+        "detail": "Lien public relevé lors de l’inventaire initial : https://www.lahontaa-reflexologie.com/. Revalider les formulaires et les parcours métier.",
+        "state": "Lien catalogué · test à refaire"
+      }
+    ],
+    "gallery": []
   },
   {
     "id": "L05",
@@ -76,7 +158,25 @@
     "status": "Site accessible",
     "need": "",
     "features": [],
-    "value": ""
+    "value": "",
+    "steps": [
+      {
+        "title": "Définir le parcours",
+        "detail": "Site de débarras de maisons, appartements et locaux ; acquisition de demandes de devis.",
+        "state": "Résumé du projet"
+      },
+      {
+        "title": "Réaliser les pages et fonctions",
+        "detail": "Site de débarras de maisons, appartements et locaux ; acquisition de demandes de devis.",
+        "state": "Décrit dans la fiche"
+      },
+      {
+        "title": "Contrôler la publication",
+        "detail": "Lien public relevé lors de l’inventaire initial : https://radiant-boost-joy.lovable.app/. Revalider les formulaires et les parcours métier.",
+        "state": "Lien catalogué · test à refaire"
+      }
+    ],
+    "gallery": []
   },
   {
     "id": "L06",
@@ -91,7 +191,25 @@
     "status": "Site accessible",
     "need": "",
     "features": [],
-    "value": ""
+    "value": "",
+    "steps": [
+      {
+        "title": "Définir le parcours",
+        "detail": "Site artisan plombier/couvreur/rénovation en Île-de-France ; présentation des services et devis.",
+        "state": "Résumé du projet"
+      },
+      {
+        "title": "Réaliser les pages et fonctions",
+        "detail": "Site artisan plombier/couvreur/rénovation en Île-de-France ; présentation des services et devis.",
+        "state": "Décrit dans la fiche"
+      },
+      {
+        "title": "Contrôler la publication",
+        "detail": "Lien public relevé lors de l’inventaire initial : https://site-gemini.lovable.app/. Revalider les formulaires et les parcours métier.",
+        "state": "Lien catalogué · test à refaire"
+      }
+    ],
+    "gallery": []
   },
   {
     "id": "L07",
@@ -106,7 +224,25 @@
     "status": "En exploration",
     "need": "",
     "features": [],
-    "value": ""
+    "value": "",
+    "steps": [
+      {
+        "title": "Repérer le projet",
+        "detail": "Projet repéré ; intitulé immobilier, fonction exacte et publication à qualifier.",
+        "state": "Identifié"
+      },
+      {
+        "title": "Qualifier le périmètre",
+        "detail": "La fonction, le code et les dépendances nécessitent une revue avant description détaillée. Stack connue : Lovable ; stack source à exporter .",
+        "state": "À qualifier"
+      },
+      {
+        "title": "Valider le résultat",
+        "detail": "Aucun lien de démo n’est associé. Statut actuel relevé : En exploration. Vérifier le parcours réel avant de publier une promesse fonctionnelle.",
+        "state": "À vérifier"
+      }
+    ],
+    "gallery": []
   },
   {
     "id": "L08",
@@ -121,7 +257,25 @@
     "status": "En exploration",
     "need": "",
     "features": [],
-    "value": ""
+    "value": "",
+    "steps": [
+      {
+        "title": "Repérer le projet",
+        "detail": "Projet repéré ; contenu et fonction métier non inspectés.",
+        "state": "Identifié"
+      },
+      {
+        "title": "Qualifier le périmètre",
+        "detail": "La fonction, le code et les dépendances nécessitent une revue avant description détaillée. Stack connue : Lovable ; stack source à exporter .",
+        "state": "À qualifier"
+      },
+      {
+        "title": "Valider le résultat",
+        "detail": "Aucun lien de démo n’est associé. Statut actuel relevé : En exploration. Vérifier le parcours réel avant de publier une promesse fonctionnelle.",
+        "state": "À vérifier"
+      }
+    ],
+    "gallery": []
   },
   {
     "id": "L09",
@@ -136,7 +290,25 @@
     "status": "En exploration",
     "need": "",
     "features": [],
-    "value": ""
+    "value": "",
+    "steps": [
+      {
+        "title": "Repérer le projet",
+        "detail": "Projet repéré ; automatisation de commandes suggérée par le nom, non confirmée.",
+        "state": "Identifié"
+      },
+      {
+        "title": "Qualifier le périmètre",
+        "detail": "La fonction, le code et les dépendances nécessitent une revue avant description détaillée. Stack connue : Lovable ; stack source à exporter .",
+        "state": "À qualifier"
+      },
+      {
+        "title": "Valider le résultat",
+        "detail": "Aucun lien de démo n’est associé. Statut actuel relevé : En exploration. Vérifier le parcours réel avant de publier une promesse fonctionnelle.",
+        "state": "À vérifier"
+      }
+    ],
+    "gallery": []
   },
   {
     "id": "L10",
@@ -151,7 +323,25 @@
     "status": "En exploration",
     "need": "",
     "features": [],
-    "value": ""
+    "value": "",
+    "steps": [
+      {
+        "title": "Repérer le projet",
+        "detail": "Projet repéré ; contenu et fonction métier non inspectés.",
+        "state": "Identifié"
+      },
+      {
+        "title": "Qualifier le périmètre",
+        "detail": "La fonction, le code et les dépendances nécessitent une revue avant description détaillée. Stack connue : Lovable ; stack source à exporter .",
+        "state": "À qualifier"
+      },
+      {
+        "title": "Valider le résultat",
+        "detail": "Aucun lien de démo n’est associé. Statut actuel relevé : En exploration. Vérifier le parcours réel avant de publier une promesse fonctionnelle.",
+        "state": "À vérifier"
+      }
+    ],
+    "gallery": []
   },
   {
     "id": "L11",
@@ -166,7 +356,25 @@
     "status": "En développement",
     "need": "",
     "features": [],
-    "value": ""
+    "value": "",
+    "steps": [
+      {
+        "title": "Repérer le projet",
+        "detail": "Mise en relation clients/professionnels, inscriptions distinctes, authentification et tableaux de bord.",
+        "state": "Identifié"
+      },
+      {
+        "title": "Qualifier le périmètre",
+        "detail": "La fonction, le code et les dépendances nécessitent une revue avant description détaillée. Stack connue : React, TypeScript, Vite, Tailwind, shadcn/ui, Supabase .",
+        "state": "À qualifier"
+      },
+      {
+        "title": "Valider le résultat",
+        "detail": "Aucun lien de démo n’est associé. Statut actuel relevé : En développement. Vérifier le parcours réel avant de publier une promesse fonctionnelle.",
+        "state": "À vérifier"
+      }
+    ],
+    "gallery": []
   },
   {
     "id": "P01",
@@ -181,7 +389,25 @@
     "status": "Démonstrateur",
     "need": "",
     "features": [],
-    "value": ""
+    "value": "",
+    "steps": [
+      {
+        "title": "Définir le besoin",
+        "detail": "Workflow JSON de 10 nœuds : agenda, filtres, rappel WhatsApp/email, webhook de confirmation et notification Telegram.",
+        "state": "Décrit dans la fiche"
+      },
+      {
+        "title": "Construire le démonstrateur",
+        "detail": "Workflow JSON de 10 nœuds : agenda, filtres, rappel WhatsApp/email, webhook de confirmation et notification Telegram.",
+        "state": "Décrit dans la fiche"
+      },
+      {
+        "title": "Connecter et vérifier",
+        "detail": "Statut : Démonstrateur. Les intégrations, la configuration et le résultat de bout en bout restent à vérifier.",
+        "state": "À tester"
+      }
+    ],
+    "gallery": []
   },
   {
     "id": "P02",
@@ -196,7 +422,25 @@
     "status": "Démonstrateur",
     "need": "",
     "features": [],
-    "value": ""
+    "value": "",
+    "steps": [
+      {
+        "title": "Définir le besoin",
+        "detail": "Workflow JSON de 8 nœuds : webhook, filtre et temporisations, construction de messages et requêtes HTTP.",
+        "state": "Décrit dans la fiche"
+      },
+      {
+        "title": "Construire le démonstrateur",
+        "detail": "Workflow JSON de 8 nœuds : webhook, filtre et temporisations, construction de messages et requêtes HTTP.",
+        "state": "Décrit dans la fiche"
+      },
+      {
+        "title": "Connecter et vérifier",
+        "detail": "Statut : Démonstrateur. Les intégrations, la configuration et le résultat de bout en bout restent à vérifier.",
+        "state": "À tester"
+      }
+    ],
+    "gallery": []
   },
   {
     "id": "P03",
@@ -211,7 +455,25 @@
     "status": "Démonstrateur",
     "need": "",
     "features": [],
-    "value": ""
+    "value": "",
+    "steps": [
+      {
+        "title": "Définir le besoin",
+        "detail": "Spécification Markdown de bases clients, projets, factures, relances et formules.",
+        "state": "Décrit dans la fiche"
+      },
+      {
+        "title": "Construire le démonstrateur",
+        "detail": "Spécification Markdown de bases clients, projets, factures, relances et formules.",
+        "state": "Décrit dans la fiche"
+      },
+      {
+        "title": "Connecter et vérifier",
+        "detail": "Statut : Démonstrateur. Les intégrations, la configuration et le résultat de bout en bout restent à vérifier.",
+        "state": "À tester"
+      }
+    ],
+    "gallery": []
   },
   {
     "id": "P04",
@@ -226,7 +488,25 @@
     "status": "Démonstrateur",
     "need": "",
     "features": [],
-    "value": ""
+    "value": "",
+    "steps": [
+      {
+        "title": "Définir le besoin",
+        "detail": "Pack éditorial de prompts pour sourcing, tri de CV, prises de contact et entretiens.",
+        "state": "Décrit dans la fiche"
+      },
+      {
+        "title": "Construire le démonstrateur",
+        "detail": "Pack éditorial de prompts pour sourcing, tri de CV, prises de contact et entretiens.",
+        "state": "Décrit dans la fiche"
+      },
+      {
+        "title": "Connecter et vérifier",
+        "detail": "Statut : Démonstrateur. Les intégrations, la configuration et le résultat de bout en bout restent à vérifier.",
+        "state": "À tester"
+      }
+    ],
+    "gallery": []
   },
   {
     "id": "P05",
@@ -241,7 +521,25 @@
     "status": "Démonstrateur",
     "need": "",
     "features": [],
-    "value": ""
+    "value": "",
+    "steps": [
+      {
+        "title": "Définir le besoin",
+        "detail": "Boucle Python : demande au modèle, appel d’un outil terminal et synthèse ; déchargement du modèle après appel.",
+        "state": "Décrit dans la fiche"
+      },
+      {
+        "title": "Construire le démonstrateur",
+        "detail": "Boucle Python : demande au modèle, appel d’un outil terminal et synthèse ; déchargement du modèle après appel.",
+        "state": "Décrit dans la fiche"
+      },
+      {
+        "title": "Connecter et vérifier",
+        "detail": "Statut : Démonstrateur. Les intégrations, la configuration et le résultat de bout en bout restent à vérifier.",
+        "state": "À tester"
+      }
+    ],
+    "gallery": []
   },
   {
     "id": "P06",
@@ -256,7 +554,25 @@
     "status": "Démonstrateur",
     "need": "",
     "features": [],
-    "value": ""
+    "value": "",
+    "steps": [
+      {
+        "title": "Définir le besoin",
+        "detail": "Lit un agenda CSV et génère des messages de rappel ; comprend une page HTML de démonstration.",
+        "state": "Décrit dans la fiche"
+      },
+      {
+        "title": "Construire le démonstrateur",
+        "detail": "Lit un agenda CSV et génère des messages de rappel ; comprend une page HTML de démonstration.",
+        "state": "Décrit dans la fiche"
+      },
+      {
+        "title": "Connecter et vérifier",
+        "detail": "Statut : Démonstrateur. Les intégrations, la configuration et le résultat de bout en bout restent à vérifier.",
+        "state": "À tester"
+      }
+    ],
+    "gallery": []
   },
   {
     "id": "P07",
@@ -271,7 +587,25 @@
     "status": "Démonstrateur",
     "need": "",
     "features": [],
-    "value": ""
+    "value": "",
+    "steps": [
+      {
+        "title": "Définir le besoin",
+        "detail": "Bibliothèque de cadence d’interactions, exemple Patchright et script de préparation de candidatures avec mode dry-run.",
+        "state": "Décrit dans la fiche"
+      },
+      {
+        "title": "Construire le démonstrateur",
+        "detail": "Bibliothèque de cadence d’interactions, exemple Patchright et script de préparation de candidatures avec mode dry-run.",
+        "state": "Décrit dans la fiche"
+      },
+      {
+        "title": "Connecter et vérifier",
+        "detail": "Statut : Démonstrateur. Les intégrations, la configuration et le résultat de bout en bout restent à vérifier.",
+        "state": "À tester"
+      }
+    ],
+    "gallery": []
   },
   {
     "id": "A01",
@@ -283,14 +617,49 @@
     "featured": true,
     "demo": "",
     "source": "",
-    "status": "En développement",
-    "need": "Réunir les outils IA dans un environnement de travail cohérent sur macOS.",
+    "status": "Prototype multi-agent · en développement",
+    "need": "Explorer un environnement de travail où une conversation peut lancer des tâches outillées sans interrompre le dialogue.",
     "features": [
       "Une gateway Python relie les interfaces aux capacités agentiques.",
       "L’orchestration, la mémoire et le registre d’agents structurent l’exécution des tâches.",
       "Les interfaces Electron et React donnent accès au contrôle et à la conversation vocale."
     ],
-    "value": "Une architecture modulaire pour explorer des assistants capables de travailler avec plusieurs modèles, outils et modalités."
+    "value": "Le document de référence décrit une architecture multi-interface, un gateway outillé, de la mémoire persistante et une orchestration de tâches. Les composants et intégrations évoluent encore ; cette fiche ne présente pas le produit comme un service commercial prêt à l’emploi.",
+    "steps": [
+      {
+        "title": "Formuler le problème d’usage",
+        "detail": "Réunir conversation, mémoire, outils et exécution de tâches dans un espace de travail cohérent.",
+        "state": "Vision produit documentée"
+      },
+      {
+        "title": "Séparer interface et exécution",
+        "detail": "Concevoir des interfaces client et contrôle autour d’un gateway Python et d’une file de tâches asynchrones.",
+        "state": "Architecture décrite dans le dépôt"
+      },
+      {
+        "title": "Orchestrer les tâches",
+        "detail": "Structurer le routage multi-agents, les outils disponibles et les reprises après erreur.",
+        "state": "Implémentation en développement"
+      },
+      {
+        "title": "Relier voix et mémoire",
+        "detail": "Explorer transcription, synthèse vocale et mémoire persistante comme composants remplaçables.",
+        "state": "Prototype local"
+      },
+      {
+        "title": "Vérifier les parcours de bout en bout",
+        "detail": "Rejouer les tests, les appels aux outils et les limites de sécurité sur l’état actuel avant de présenter une démo publique.",
+        "state": "À revalider"
+      }
+    ],
+    "gallery": [
+      {
+        "src": "/project-visuals/na-agent-architecture.svg",
+        "alt": "Schéma d’architecture na_agent reliant les interfaces, la gateway Python, l’orchestration multi-agents, les tâches asynchrones, la mémoire et les outils",
+        "caption": "Carte d’architecture · interfaces, orchestration, voix et outils",
+        "kind": "architecture"
+      }
+    ]
   },
   {
     "id": "A02",
@@ -305,7 +674,25 @@
     "status": "En développement",
     "need": "",
     "features": [],
-    "value": ""
+    "value": "",
+    "steps": [
+      {
+        "title": "Repérer le projet",
+        "detail": "Moniteur web du graphe et de l’activité des agents, composant de na_agent.",
+        "state": "Identifié"
+      },
+      {
+        "title": "Qualifier le périmètre",
+        "detail": "La fonction, le code et les dépendances nécessitent une revue avant description détaillée. Stack connue : Next.js, React, TypeScript, Tailwind, Three.js, react-force-graph .",
+        "state": "À qualifier"
+      },
+      {
+        "title": "Valider le résultat",
+        "detail": "Aucun lien de démo n’est associé. Statut actuel relevé : En développement. Vérifier le parcours réel avant de publier une promesse fonctionnelle.",
+        "state": "À vérifier"
+      }
+    ],
+    "gallery": []
   },
   {
     "id": "A03",
@@ -324,7 +711,35 @@
       "Personnalisation des messages et gestion de plusieurs comptes.",
       "Application Electron, intégration Baileys et services Supabase ; site commercial distinct."
     ],
-    "value": "Un produit métier qui réunit préparation, personnalisation et suivi. Les performances de délivrabilité ne sont pas mesurées dans cette présentation."
+    "value": "Un produit métier qui réunit préparation, personnalisation et suivi. Les performances de délivrabilité ne sont pas mesurées dans cette présentation.",
+    "steps": [
+      {
+        "title": "Cadrer le besoin",
+        "detail": "Préparer et organiser des campagnes de prospection depuis une application desktop.",
+        "state": "Documenté"
+      },
+      {
+        "title": "Étape 2 · Construire la réponse",
+        "detail": "Import de contacts et préparation des campagnes dans une interface dédiée.",
+        "state": "Décrit dans la fiche"
+      },
+      {
+        "title": "Étape 3 · Construire la réponse",
+        "detail": "Personnalisation des messages et gestion de plusieurs comptes.",
+        "state": "Décrit dans la fiche"
+      },
+      {
+        "title": "Étape 4 · Construire la réponse",
+        "detail": "Application Electron, intégration Baileys et services Supabase ; site commercial distinct.",
+        "state": "Décrit dans la fiche"
+      },
+      {
+        "title": "Valider et livrer",
+        "detail": "Lien de démonstration catalogué : https://www.haziapp.fr/. Disponibilité et parcours à revalider avant toute promesse de fonctionnement.",
+        "state": "Lien catalogué · parcours à revalider"
+      }
+    ],
+    "gallery": []
   },
   {
     "id": "A04",
@@ -339,26 +754,72 @@
     "status": "En développement",
     "need": "",
     "features": [],
-    "value": ""
+    "value": "",
+    "steps": [
+      {
+        "title": "Repérer le projet",
+        "detail": "Famille de clients desktop de campagnes et de prospection. Variantes goth outreach, démonstration investisseurs, extension Chrome et pages commerciales.",
+        "state": "Identifié"
+      },
+      {
+        "title": "Qualifier le périmètre",
+        "detail": "La fonction, le code et les dépendances nécessitent une revue avant description détaillée. Stack connue : Electron, JavaScript, Playwright, Baileys, SQLite .",
+        "state": "À qualifier"
+      },
+      {
+        "title": "Valider le résultat",
+        "detail": "Aucun lien de démo n’est associé. Statut actuel relevé : En développement. Vérifier le parcours réel avant de publier une promesse fonctionnelle.",
+        "state": "À vérifier"
+      }
+    ],
+    "gallery": []
   },
   {
     "id": "A05",
-    "name": "CHAKA LIVE OS",
-    "description": "Cockpit artistique : imports CSV/TSV, visualisations, économie unitaire, fanbase, scénarios et CRM ambassadeurs documentés.",
-    "stack": "React, JavaScript, Vite, Tailwind, Recharts, Supabase",
+    "name": "CHAKA LIVE OS — cockpit de données artistiques",
+    "description": "Cockpit analytique navigateur pour importer des données locales, explorer la rétention d’audience, comparer des scénarios et préparer des décisions pour un projet artistique.",
+    "stack": "React, JavaScript, Vite, Tailwind CSS, Recharts, CSV/TSV",
     "slug": "a05",
     "category": "Applications & IA",
     "featured": true,
     "demo": "https://chaka-live-os.vercel.app/",
-    "source": "",
-    "status": "Site accessible",
-    "need": "Rendre les données d’un projet artistique plus lisibles pour préparer les décisions.",
+    "source": "https://github.com/Naoufalou/chaka-live-os",
+    "status": "Démo web · analyses locales",
+    "need": "Transformer des exports hétérogènes en vues lisibles sans envoyer les fichiers importés vers un serveur.",
     "features": [
-      "Imports CSV et TSV pour alimenter le cockpit.",
-      "Visualisations autour de la fanbase, des scénarios et de l’économie unitaire.",
-      "Une interface React avec graphiques Recharts et backend Supabase."
+      "Importer et fusionner des fichiers CSV/TSV avec détection de doublons par empreinte.",
+      "Explorer cohortes de rétention, économie unitaire, scénarios et historique publicitaire.",
+      "Verrouiller les calculs lorsque les entrées nécessaires manquent et garder les imports dans le navigateur."
     ],
-    "value": "Un cockpit qui rapproche données, scénarios et actions. Les projections affichées par l’application ne sont pas des résultats acquis."
+    "value": "Le dépôt décrit une application Vite entièrement exécutée dans le navigateur et un socle de données de référence sourcées. La connexion continue aux plateformes et l’écriture de campagnes sont volontairement absentes ; le build et les interactions ne sont pas re-testés dans cette mise à jour.",
+    "steps": [
+      {
+        "title": "Définir les sources et leur périmètre",
+        "detail": "Distinguer les exports importés des benchmarks et documenter les sources utilisées pour comparer les résultats.",
+        "state": "Dépôt et sources documentés"
+      },
+      {
+        "title": "Construire l’import reproductible",
+        "detail": "Lire les formats CSV/TSV, fusionner sans écraser et repérer les doublons avec une empreinte de contenu.",
+        "state": "Code présent dans le dépôt"
+      },
+      {
+        "title": "Modéliser les indicateurs",
+        "detail": "Relier cohortes, unit economics et scénarios à des calculs qui signalent les données manquantes.",
+        "state": "Moteurs de calcul documentés"
+      },
+      {
+        "title": "Protéger les données importées",
+        "detail": "Garder les fichiers sur l’appareil et ne pas simuler d’écriture sur les plateformes externes.",
+        "state": "Périmètre hors-ligne documenté"
+      },
+      {
+        "title": "Vérifier la démo et les calculs",
+        "detail": "Rejouer l’import, les contrôles des entrées et la compilation Vite sur la version publique actuelle.",
+        "state": "À revalider"
+      }
+    ],
+    "gallery": []
   },
   {
     "id": "A06",
@@ -377,7 +838,35 @@
       "Outils navigateur, messagerie et bridge MCP.",
       "Backend Python et Node.js, orchestration LangGraph et données Supabase."
     ],
-    "value": "Une évolution de la famille d’outils de prospection vers un environnement agentique spécialisé."
+    "value": "Une évolution de la famille d’outils de prospection vers un environnement agentique spécialisé.",
+    "steps": [
+      {
+        "title": "Cadrer le besoin",
+        "detail": "Explorer un agent de prospection adapté à un contexte musical.",
+        "state": "Documenté"
+      },
+      {
+        "title": "Étape 2 · Construire la réponse",
+        "detail": "Interfaces desktop et web.",
+        "state": "Décrit dans la fiche"
+      },
+      {
+        "title": "Étape 3 · Construire la réponse",
+        "detail": "Outils navigateur, messagerie et bridge MCP.",
+        "state": "Décrit dans la fiche"
+      },
+      {
+        "title": "Étape 4 · Construire la réponse",
+        "detail": "Backend Python et Node.js, orchestration LangGraph et données Supabase.",
+        "state": "Décrit dans la fiche"
+      },
+      {
+        "title": "Valider et livrer",
+        "detail": "Statut relevé : En développement. Une exécution complète, la configuration des services et une démonstration restent à vérifier.",
+        "state": "Validation à compléter"
+      }
+    ],
+    "gallery": []
   },
   {
     "id": "A07",
@@ -392,7 +881,25 @@
     "status": "En développement",
     "need": "",
     "features": [],
-    "value": ""
+    "value": "",
+    "steps": [
+      {
+        "title": "Repérer le projet",
+        "detail": "Application de prospection : pages analytics, audit, base, inbox ; modules de scraping, personnalisation et email. Plusieurs générations locales.",
+        "state": "Identifié"
+      },
+      {
+        "title": "Qualifier le périmètre",
+        "detail": "La fonction, le code et les dépendances nécessitent une revue avant description détaillée. Stack connue : Next.js, TypeScript, React, Electron, Crawlee, Playwright, Supabase, Prisma .",
+        "state": "À qualifier"
+      },
+      {
+        "title": "Valider le résultat",
+        "detail": "Aucun lien de démo n’est associé. Statut actuel relevé : En développement. Vérifier le parcours réel avant de publier une promesse fonctionnelle.",
+        "state": "À vérifier"
+      }
+    ],
+    "gallery": []
   },
   {
     "id": "A08",
@@ -407,7 +914,25 @@
     "status": "En développement",
     "need": "",
     "features": [],
-    "value": ""
+    "value": "",
+    "steps": [
+      {
+        "title": "Repérer le projet",
+        "detail": "Interfaces de leads, tableaux de bord et visualisations 3D. Variantes pixelcreate2, copies et prospectionvente1.",
+        "state": "Identifié"
+      },
+      {
+        "title": "Qualifier le périmètre",
+        "detail": "La fonction, le code et les dépendances nécessitent une revue avant description détaillée. Stack connue : React, Next.js/Vite, TypeScript/JavaScript, Three.js, Gemini .",
+        "state": "À qualifier"
+      },
+      {
+        "title": "Valider le résultat",
+        "detail": "Aucun lien de démo n’est associé. Statut actuel relevé : En développement. Vérifier le parcours réel avant de publier une promesse fonctionnelle.",
+        "state": "À vérifier"
+      }
+    ],
+    "gallery": []
   },
   {
     "id": "A09",
@@ -426,7 +951,35 @@
       "Scoring d’intention par Gemini et génération de propositions.",
       "Dashboard React et serveur Express ; mode simulation documenté."
     ],
-    "value": "Un démonstrateur de veille augmentée par IA pour organiser des opportunités à examiner."
+    "value": "Un démonstrateur de veille augmentée par IA pour organiser des opportunités à examiner.",
+    "steps": [
+      {
+        "title": "Cadrer le besoin",
+        "detail": "Repérer des signaux de besoin dans des sources de veille.",
+        "state": "Documenté"
+      },
+      {
+        "title": "Étape 2 · Construire la réponse",
+        "detail": "Collecte Reddit et RSS.",
+        "state": "Décrit dans la fiche"
+      },
+      {
+        "title": "Étape 3 · Construire la réponse",
+        "detail": "Scoring d’intention par Gemini et génération de propositions.",
+        "state": "Décrit dans la fiche"
+      },
+      {
+        "title": "Étape 4 · Construire la réponse",
+        "detail": "Dashboard React et serveur Express ; mode simulation documenté.",
+        "state": "Décrit dans la fiche"
+      },
+      {
+        "title": "Valider et livrer",
+        "detail": "Statut relevé : En développement. Une exécution complète, la configuration des services et une démonstration restent à vérifier.",
+        "state": "Validation à compléter"
+      }
+    ],
+    "gallery": []
   },
   {
     "id": "A10",
@@ -445,7 +998,35 @@
       "Définition de zones polygonales et traitement des événements de présence.",
       "Interface PySide6 et génération de clips d’alerte."
     ],
-    "value": "Un prototype de vision par ordinateur appliquée au suivi de zones, avec une interface exploitable par un opérateur."
+    "value": "Un prototype de vision par ordinateur appliquée au suivi de zones, avec une interface exploitable par un opérateur.",
+    "steps": [
+      {
+        "title": "Cadrer le besoin",
+        "detail": "Observer des zones définies dans un flux vidéo depuis une interface desktop.",
+        "state": "Documenté"
+      },
+      {
+        "title": "Étape 2 · Construire la réponse",
+        "detail": "Détection de personnes avec un pipeline OpenCV, ONNX Runtime et YOLO.",
+        "state": "Décrit dans la fiche"
+      },
+      {
+        "title": "Étape 3 · Construire la réponse",
+        "detail": "Définition de zones polygonales et traitement des événements de présence.",
+        "state": "Décrit dans la fiche"
+      },
+      {
+        "title": "Étape 4 · Construire la réponse",
+        "detail": "Interface PySide6 et génération de clips d’alerte.",
+        "state": "Décrit dans la fiche"
+      },
+      {
+        "title": "Valider et livrer",
+        "detail": "Statut relevé : En développement. Une exécution complète, la configuration des services et une démonstration restent à vérifier.",
+        "state": "Validation à compléter"
+      }
+    ],
+    "gallery": []
   },
   {
     "id": "A11",
@@ -460,7 +1041,25 @@
     "status": "En développement",
     "need": "",
     "features": [],
-    "value": ""
+    "value": "",
+    "steps": [
+      {
+        "title": "Repérer le projet",
+        "detail": "Contrôle gestuel de macOS et interfaces de réglage/visualisation des gestes. AirMouse possède une base open source externe documentée.",
+        "state": "Identifié"
+      },
+      {
+        "title": "Qualifier le périmètre",
+        "detail": "La fonction, le code et les dépendances nécessitent une revue avant description détaillée. Stack connue : Python, Apple Vision, MediaPipe, OpenCV, React, TypeScript, Electron .",
+        "state": "À qualifier"
+      },
+      {
+        "title": "Valider le résultat",
+        "detail": "Aucun lien de démo n’est associé. Statut actuel relevé : En développement. Vérifier le parcours réel avant de publier une promesse fonctionnelle.",
+        "state": "À vérifier"
+      }
+    ],
+    "gallery": []
   },
   {
     "id": "A12",
@@ -479,7 +1078,35 @@
       "OCR, normalisation des champs et dédoublonnage.",
       "Consolidation SQLite et exposition dans un dashboard FastAPI."
     ],
-    "value": "Une chaîne de traitement pour passer de sources hétérogènes à un jeu de données structuré."
+    "value": "Une chaîne de traitement pour passer de sources hétérogènes à un jeu de données structuré.",
+    "steps": [
+      {
+        "title": "Cadrer le besoin",
+        "detail": "Consolider des fichiers et des tableaux dispersés dans Telegram.",
+        "state": "Documenté"
+      },
+      {
+        "title": "Étape 2 · Construire la réponse",
+        "detail": "Ingestion via Telethon et lecture de tableaux avec pandas.",
+        "state": "Décrit dans la fiche"
+      },
+      {
+        "title": "Étape 3 · Construire la réponse",
+        "detail": "OCR, normalisation des champs et dédoublonnage.",
+        "state": "Décrit dans la fiche"
+      },
+      {
+        "title": "Étape 4 · Construire la réponse",
+        "detail": "Consolidation SQLite et exposition dans un dashboard FastAPI.",
+        "state": "Décrit dans la fiche"
+      },
+      {
+        "title": "Valider et livrer",
+        "detail": "Statut relevé : En développement. Une exécution complète, la configuration des services et une démonstration restent à vérifier.",
+        "state": "Validation à compléter"
+      }
+    ],
+    "gallery": []
   },
   {
     "id": "A13",
@@ -494,7 +1121,25 @@
     "status": "En développement",
     "need": "",
     "features": [],
-    "value": ""
+    "value": "",
+    "steps": [
+      {
+        "title": "Repérer le projet",
+        "detail": "Extraction de coordonnées depuis des pages PAP/SeLoger fournies, sorties CSV et gestion d’erreurs.",
+        "state": "Identifié"
+      },
+      {
+        "title": "Qualifier le périmètre",
+        "detail": "La fonction, le code et les dépendances nécessitent une revue avant description détaillée. Stack connue : Python, Playwright, CSV .",
+        "state": "À qualifier"
+      },
+      {
+        "title": "Valider le résultat",
+        "detail": "Aucun lien de démo n’est associé. Statut actuel relevé : En développement. Vérifier le parcours réel avant de publier une promesse fonctionnelle.",
+        "state": "À vérifier"
+      }
+    ],
+    "gallery": []
   },
   {
     "id": "A14",
@@ -509,7 +1154,25 @@
     "status": "En développement",
     "need": "",
     "features": [],
-    "value": ""
+    "value": "",
+    "steps": [
+      {
+        "title": "Repérer le projet",
+        "detail": "Scripts de collecte de contacts et recherche web ; variantes autonomes et module intégré à Pixelcreate/Zina.",
+        "state": "Identifié"
+      },
+      {
+        "title": "Qualifier le périmètre",
+        "detail": "La fonction, le code et les dépendances nécessitent une revue avant description détaillée. Stack connue : Python, Playwright, BeautifulSoup, requests, CustomTkinter .",
+        "state": "À qualifier"
+      },
+      {
+        "title": "Valider le résultat",
+        "detail": "Aucun lien de démo n’est associé. Statut actuel relevé : En développement. Vérifier le parcours réel avant de publier une promesse fonctionnelle.",
+        "state": "À vérifier"
+      }
+    ],
+    "gallery": []
   },
   {
     "id": "A15",
@@ -524,7 +1187,25 @@
     "status": "En développement",
     "need": "",
     "features": [],
-    "value": ""
+    "value": "",
+    "steps": [
+      {
+        "title": "Repérer le projet",
+        "detail": "Agents de recherche d’emploi et préparation de candidatures ; variantes LangChain/OpenAI et Stagehand/Gemini.",
+        "state": "Identifié"
+      },
+      {
+        "title": "Qualifier le périmètre",
+        "detail": "La fonction, le code et les dépendances nécessitent une revue avant description détaillée. Stack connue : Python, Node.js, TypeScript, LangChain, Stagehand, Playwright, Gemini .",
+        "state": "À qualifier"
+      },
+      {
+        "title": "Valider le résultat",
+        "detail": "Aucun lien de démo n’est associé. Statut actuel relevé : En développement. Vérifier le parcours réel avant de publier une promesse fonctionnelle.",
+        "state": "À vérifier"
+      }
+    ],
+    "gallery": []
   },
   {
     "id": "A16",
@@ -539,7 +1220,25 @@
     "status": "En développement",
     "need": "",
     "features": [],
-    "value": ""
+    "value": "",
+    "steps": [
+      {
+        "title": "Repérer le projet",
+        "detail": "Application SwiftUI de préparation de messages personnalisés et interface avec Messages.",
+        "state": "Identifié"
+      },
+      {
+        "title": "Qualifier le périmètre",
+        "detail": "La fonction, le code et les dépendances nécessitent une revue avant description détaillée. Stack connue : Swift, SwiftUI, Swift Package Manager .",
+        "state": "À qualifier"
+      },
+      {
+        "title": "Valider le résultat",
+        "detail": "Aucun lien de démo n’est associé. Statut actuel relevé : En développement. Vérifier le parcours réel avant de publier une promesse fonctionnelle.",
+        "state": "À vérifier"
+      }
+    ],
+    "gallery": []
   },
   {
     "id": "A17",
@@ -554,7 +1253,25 @@
     "status": "En développement",
     "need": "",
     "features": [],
-    "value": ""
+    "value": "",
+    "steps": [
+      {
+        "title": "Repérer le projet",
+        "detail": "Famille d’applications commerce/lifestyle : mobile Expo, écrans shop/services/favoris/compte et administration Next.js.",
+        "state": "Identifié"
+      },
+      {
+        "title": "Qualifier le périmètre",
+        "detail": "La fonction, le code et les dépendances nécessitent une revue avant description détaillée. Stack connue : React Native, Expo, TypeScript, Next.js, Supabase, Zustand .",
+        "state": "À qualifier"
+      },
+      {
+        "title": "Valider le résultat",
+        "detail": "Aucun lien de démo n’est associé. Statut actuel relevé : En développement. Vérifier le parcours réel avant de publier une promesse fonctionnelle.",
+        "state": "À vérifier"
+      }
+    ],
+    "gallery": []
   },
   {
     "id": "A18",
@@ -569,7 +1286,25 @@
     "status": "En développement",
     "need": "",
     "features": [],
-    "value": ""
+    "value": "",
+    "steps": [
+      {
+        "title": "Repérer le projet",
+        "detail": "Boutique Telegram : catalogue, panier, commandes et administration ; plusieurs backends/itérations.",
+        "state": "Identifié"
+      },
+      {
+        "title": "Qualifier le périmètre",
+        "detail": "La fonction, le code et les dépendances nécessitent une revue avant description détaillée. Stack connue : React, Vite, Node.js, Express, grammY/Telegraf, SQLite .",
+        "state": "À qualifier"
+      },
+      {
+        "title": "Valider le résultat",
+        "detail": "Aucun lien de démo n’est associé. Statut actuel relevé : En développement. Vérifier le parcours réel avant de publier une promesse fonctionnelle.",
+        "state": "À vérifier"
+      }
+    ],
+    "gallery": []
   },
   {
     "id": "A19",
@@ -584,7 +1319,25 @@
     "status": "En développement",
     "need": "",
     "features": [],
-    "value": ""
+    "value": "",
+    "steps": [
+      {
+        "title": "Repérer le projet",
+        "detail": "Application mobile autour de l’import, du traitement et du partage de photos ; fonction de sublimation mentionnée dans les tâches Antigravity.",
+        "state": "Identifié"
+      },
+      {
+        "title": "Qualifier le périmètre",
+        "detail": "La fonction, le code et les dépendances nécessitent une revue avant description détaillée. Stack connue : React Native, Expo, TypeScript, Supabase .",
+        "state": "À qualifier"
+      },
+      {
+        "title": "Valider le résultat",
+        "detail": "Aucun lien de démo n’est associé. Statut actuel relevé : En développement. Vérifier le parcours réel avant de publier une promesse fonctionnelle.",
+        "state": "À vérifier"
+      }
+    ],
+    "gallery": []
   },
   {
     "id": "A20",
@@ -599,7 +1352,25 @@
     "status": "En exploration",
     "need": "",
     "features": [],
-    "value": ""
+    "value": "",
+    "steps": [
+      {
+        "title": "Repérer le projet",
+        "detail": "Interface React de marketing ; fonction détaillée à qualifier à partir des composants.",
+        "state": "Identifié"
+      },
+      {
+        "title": "Qualifier le périmètre",
+        "detail": "La fonction, le code et les dépendances nécessitent une revue avant description détaillée. Stack connue : React, Vite, Tailwind, Framer Motion .",
+        "state": "À qualifier"
+      },
+      {
+        "title": "Valider le résultat",
+        "detail": "Aucun lien de démo n’est associé. Statut actuel relevé : En exploration. Vérifier le parcours réel avant de publier une promesse fonctionnelle.",
+        "state": "À vérifier"
+      }
+    ],
+    "gallery": []
   },
   {
     "id": "A21",
@@ -614,7 +1385,25 @@
     "status": "En développement",
     "need": "",
     "features": [],
-    "value": ""
+    "value": "",
+    "steps": [
+      {
+        "title": "Repérer le projet",
+        "detail": "Scanner, stratégie, sentiment, optimisation et arbitrage de funding ; variantes de stratégies.",
+        "state": "Identifié"
+      },
+      {
+        "title": "Qualifier le périmètre",
+        "detail": "La fonction, le code et les dépendances nécessitent une revue avant description détaillée. Stack connue : Python, ccxt, pandas, NumPy .",
+        "state": "À qualifier"
+      },
+      {
+        "title": "Valider le résultat",
+        "detail": "Aucun lien de démo n’est associé. Statut actuel relevé : En développement. Vérifier le parcours réel avant de publier une promesse fonctionnelle.",
+        "state": "À vérifier"
+      }
+    ],
+    "gallery": []
   },
   {
     "id": "A22",
@@ -629,7 +1418,25 @@
     "status": "En développement",
     "need": "",
     "features": [],
-    "value": ""
+    "value": "",
+    "steps": [
+      {
+        "title": "Repérer le projet",
+        "detail": "Jeu Wordle spatial et prototypes de scènes/interfaces VisionOS.",
+        "state": "Identifié"
+      },
+      {
+        "title": "Qualifier le périmètre",
+        "detail": "La fonction, le code et les dépendances nécessitent une revue avant description détaillée. Stack connue : Swift, SwiftUI, RealityKit .",
+        "state": "À qualifier"
+      },
+      {
+        "title": "Valider le résultat",
+        "detail": "Aucun lien de démo n’est associé. Statut actuel relevé : En développement. Vérifier le parcours réel avant de publier une promesse fonctionnelle.",
+        "state": "À vérifier"
+      }
+    ],
+    "gallery": []
   },
   {
     "id": "A23",
@@ -644,7 +1451,25 @@
     "status": "En exploration",
     "need": "",
     "features": [],
-    "value": ""
+    "value": "",
+    "steps": [
+      {
+        "title": "Repérer le projet",
+        "detail": "Widget TypeScript utilisant le modèle de développement Figma ; fonctionnalité propre non établie.",
+        "state": "Identifié"
+      },
+      {
+        "title": "Qualifier le périmètre",
+        "detail": "La fonction, le code et les dépendances nécessitent une revue avant description détaillée. Stack connue : TypeScript, Figma Widget API, esbuild .",
+        "state": "À qualifier"
+      },
+      {
+        "title": "Valider le résultat",
+        "detail": "Aucun lien de démo n’est associé. Statut actuel relevé : En exploration. Vérifier le parcours réel avant de publier une promesse fonctionnelle.",
+        "state": "À vérifier"
+      }
+    ],
+    "gallery": []
   },
   {
     "id": "A24",
@@ -659,7 +1484,25 @@
     "status": "En exploration",
     "need": "",
     "features": [],
-    "value": ""
+    "value": "",
+    "steps": [
+      {
+        "title": "Repérer le projet",
+        "detail": "Projet Python repéré dans l’environnement Antigravity ; usage détaillé non établi.",
+        "state": "Identifié"
+      },
+      {
+        "title": "Qualifier le périmètre",
+        "detail": "La fonction, le code et les dépendances nécessitent une revue avant description détaillée. Stack connue : Python .",
+        "state": "À qualifier"
+      },
+      {
+        "title": "Valider le résultat",
+        "detail": "Aucun lien de démo n’est associé. Statut actuel relevé : En exploration. Vérifier le parcours réel avant de publier une promesse fonctionnelle.",
+        "state": "À vérifier"
+      }
+    ],
+    "gallery": []
   },
   {
     "id": "A25",
@@ -674,6 +1517,317 @@
     "status": "En exploration",
     "need": "",
     "features": [],
-    "value": ""
+    "value": "",
+    "steps": [
+      {
+        "title": "Repérer le projet",
+        "detail": "Prosperia, GPTapply/EasyApply, WTTJ, ScrapeAI, pipelines vidéo YouTube, Telegram, notebooks data et copies OSINT.",
+        "state": "Identifié"
+      },
+      {
+        "title": "Qualifier le périmètre",
+        "detail": "La fonction, le code et les dépendances nécessitent une revue avant description détaillée. Stack connue : Python, JavaScript, TypeScript, R, notebooks, Scrapy, Selenium .",
+        "state": "À qualifier"
+      },
+      {
+        "title": "Valider le résultat",
+        "detail": "Aucun lien de démo n’est associé. Statut actuel relevé : En exploration. Vérifier le parcours réel avant de publier une promesse fonctionnelle.",
+        "state": "À vérifier"
+      }
+    ],
+    "gallery": []
+  },
+  {
+    "id": "A26",
+    "name": "PixelCreate — Lead Responder, AI Inbox & Follow-up",
+    "description": "Refonte locale d’une vitrine pour PME autour de trois automatisations commerciales : réponse aux prospects, tri des demandes et relances. Le formulaire d’éligibilité et le calculateur sont des prototypes navigateur ; aucun backend ni paiement n’est configuré.",
+    "stack": "HTML, CSS, JavaScript ; déploiement Cloudflare non effectué",
+    "slug": "pixelcreate-lead-os",
+    "category": "Applications & IA",
+    "featured": true,
+    "demo": "",
+    "source": "https://github.com/Naoufalou/Pixelcreate",
+    "status": "Prototype local",
+    "need": "Aider une PME à traiter plus vite les demandes entrantes et réduire les relances oubliées.",
+    "features": [
+      "Présenter Lead Responder, AI Inbox et Follow-up Agent dans un parcours commercial lisible.",
+      "Prototyper une démo produit, un calculateur ROI illustratif et un questionnaire d’éligibilité côté navigateur.",
+      "Prévoir les états de confiance, la validation humaine et la connexion future aux services sans prétendre qu’ils sont actifs."
+    ],
+    "value": "Prototype de vitrine et de parcours de conversion. L’authentification Cloudflare, le backend, les envois et les paiements restent à connecter.",
+    "steps": [
+      {
+        "title": "Auditer le périmètre disponible",
+        "detail": "Le dépôt Git identifié était incomplet ; la refonte a été préparée dans un dossier de travail statique séparé.",
+        "state": "Audit documenté"
+      },
+      {
+        "title": "Clarifier la promesse",
+        "detail": "Positionner le site sur la réponse aux prospects, le tri de la boîte de réception et les relances.",
+        "state": "Réalisé dans le prototype"
+      },
+      {
+        "title": "Construire la vitrine",
+        "detail": "Créer les sections produit, la démo, le calculateur ROI et le questionnaire côté navigateur.",
+        "state": "Prototype local"
+      },
+      {
+        "title": "Préparer la mise en ligne",
+        "detail": "Vérifier la configuration Cloudflare et les intégrations ; aucun déploiement ni paiement réel n’est confirmé.",
+        "state": "À connecter / publier"
+      }
+    ],
+    "gallery": []
+  },
+  {
+    "id": "A27",
+    "name": "Bouchon — Application d’autopartage",
+    "description": "Application mobile d’autopartage avec gestion des véhicules, demandes de réservation et parcours de partage. La version web et la landing sont publiées ; l’exécution native iOS/Android n’a pas été confirmée.",
+    "stack": "React Native, Expo SDK 57, TypeScript, expo-router, Zustand, AsyncStorage",
+    "slug": "bouchon-autopartage",
+    "category": "Applications & IA",
+    "featured": true,
+    "demo": "https://bouchon-demo.vercel.app/",
+    "source": "",
+    "status": "Démo web publiée · natif à valider",
+    "need": "Organiser le partage de véhicules et le parcours de réservation entre utilisateurs.",
+    "features": [
+      "Structurer les règles métier de réservation et de disponibilité dans des modules dédiés.",
+      "Gérer l’état de l’application avec un store et une persistance locale.",
+      "Proposer une carte et un parcours web de démonstration ; validation mobile native encore ouverte."
+    ],
+    "value": "TypeScript, tests du domaine et export web vérifiés sur le dernier état inspecté. Les tests natifs et les fonctions serveur ne sont pas présentés comme validés.",
+    "steps": [
+      {
+        "title": "Définir les règles métier",
+        "detail": "Séparer les règles de réservation, demandes d’adhésion et affichage des dates dans le domaine.",
+        "state": "Documenté et testé"
+      },
+      {
+        "title": "Construire l’application",
+        "detail": "Créer les écrans Expo, le routage, l’état local et les parcours d’autopartage.",
+        "state": "Code présent"
+      },
+      {
+        "title": "Vérifier le web",
+        "detail": "Typecheck, tests existants et export web ont été exécutés sur le dernier état disponible.",
+        "state": "Vérifié sur le dernier état inspecté"
+      },
+      {
+        "title": "Valider sur appareils",
+        "detail": "Lancer et contrôler l’application sur simulateur ou appareil iOS/Android.",
+        "state": "Non validé"
+      }
+    ],
+    "gallery": [
+      {
+        "src": "/project-visuals/bouchon-contact-sheet.jpg",
+        "alt": "Planche de huit écrans de la démonstration Bouchon : accueil, calendrier, réservations, groupe et espace propriétaire",
+        "caption": "Parcours de la démo · accueil, calendrier et pilotage",
+        "kind": "capture"
+      },
+      {
+        "src": "/project-visuals/bouchon-home.webp",
+        "alt": "Écran d’accueil de Bouchon avec une carte explicitement simulée, un véhicule de démonstration et les actions de réservation",
+        "caption": "Accueil · position et véhicule de démonstration",
+        "kind": "capture"
+      },
+      {
+        "src": "/project-visuals/bouchon-calendar.webp",
+        "alt": "Vue calendrier mensuelle de démonstration Bouchon avec créneaux simulés",
+        "caption": "Calendrier · réservations de démonstration",
+        "kind": "capture"
+      },
+      {
+        "src": "/project-visuals/bouchon-owner.webp",
+        "alt": "Tableau de bord propriétaire Bouchon présentant un véhicule et des indicateurs fictifs de démonstration",
+        "caption": "Espace propriétaire · données fictives de démonstration",
+        "kind": "capture"
+      }
+    ]
+  },
+  {
+    "id": "A28",
+    "name": "LAMAJ — Boutique & réservation",
+    "description": "Boutique mode éditoriale avec un catalogue réduit à trois pièces, panier persistant et parcours de réservation. Déployée sur Vercel ; l’API Airtable reste en mode démonstration tant que ses variables ne sont pas configurées.",
+    "stack": "HTML, CSS, JavaScript, Node.js, module Airtable préparé",
+    "slug": "lamaj-boutique",
+    "category": "Sites & acquisition",
+    "featured": true,
+    "demo": "https://lamaj.vercel.app/",
+    "source": "",
+    "status": "Site en production · Airtable à connecter",
+    "need": "Présenter une sélection de pièces de mode et convertir la découverte en réservation.",
+    "features": [
+      "Catalogue vitrine limité à Veste Ligne, Maille Sienne et Sac Éclipse.",
+      "Filtres produits, sac persistant et recherche visuelle.",
+      "Réservation en trois étapes avec confirmation ; chargement Airtable prévu avec repli sur les données de démonstration."
+    ],
+    "value": "Site Vercel publié et parcours boutique vérifié en mode démonstration. Les données Airtable live ne sont pas confirmées.",
+    "steps": [
+      {
+        "title": "Définir la sélection de lancement",
+        "detail": "Réduire le catalogue de lancement à trois références identifiées.",
+        "state": "Réalisé"
+      },
+      {
+        "title": "Construire la boutique",
+        "detail": "Mettre en place catalogue, filtres, sac et recherche avec une direction éditoriale premium.",
+        "state": "Réalisé dans le prototype"
+      },
+      {
+        "title": "Créer le parcours de réservation",
+        "detail": "Guider l’utilisateur en trois étapes et afficher une confirmation.",
+        "state": "Parcours testé"
+      },
+      {
+        "title": "Publier et brancher les données",
+        "detail": "Déployer sur Vercel ; l’API Airtable reste en attente de configuration.",
+        "state": "Production web · Airtable à connecter"
+      }
+    ],
+    "gallery": []
+  },
+  {
+    "id": "A29",
+    "name": "AstraLive / Navir — Assistant vocal local",
+    "description": "Prototype local d’assistant vocal continu combinant reconnaissance vocale, modèle de langage local et synthèse vocale. Le pipeline terminal a traité une entrée micro réelle ; l’interface d’appel et l’interruption restent à stabiliser.",
+    "stack": "Python, MLX Whisper, LM Studio, Chatterbox TTS, VAD, interface HTTP locale",
+    "slug": "astralive-navir",
+    "category": "Applications & IA",
+    "featured": true,
+    "demo": "",
+    "source": "",
+    "status": "Prototype vocal local · interface partielle",
+    "need": "Permettre une conversation vocale naturelle en continu avec un assistant local.",
+    "features": [
+      "Boucle START / STOP / MUTE et interface locale orientée appel.",
+      "Pipeline VAD, transcription, réponse LLM et synthèse vocale.",
+      "Métriques de latence et interruption étudiées ; latence TTS élevée et barge-in fragile dans les essais documentés."
+    ],
+    "value": "Le pipeline vocal local a atteint un échange micro → transcription → réponse → audio. Le dialogue naturel à faible latence n’est pas encore validé.",
+    "steps": [
+      {
+        "title": "Assembler le pipeline vocal",
+        "detail": "Relier VAD, reconnaissance vocale, modèle de langage local et synthèse française.",
+        "state": "Pipeline local atteint"
+      },
+      {
+        "title": "Créer le mode appel",
+        "detail": "Ajouter une interface continue avec START, STOP et MUTE, sans saisie textuelle centrale.",
+        "state": "Interface locale présente"
+      },
+      {
+        "title": "Mesurer la réponse audio",
+        "detail": "Instrumenter la fin de parole, la génération et le premier son audible.",
+        "state": "Mesures obtenues"
+      },
+      {
+        "title": "Stabiliser latence et interruption",
+        "detail": "Réduire les délais de synthèse et fiabiliser la détection de prise de parole sans couper la réponse de l’assistant.",
+        "state": "À poursuivre"
+      }
+    ],
+    "gallery": []
+  },
+  {
+    "id": "A30",
+    "name": "N.A.VIRE — Control Tower (concept UX)",
+    "description": "Exploration visuelle d’un cockpit spatial pour piloter projets, agents, tâches, événements et validations. Les images sont des concepts d’interface, pas des captures d’une application opérationnelle.",
+    "stack": "Concept UX, vues de contrôle, design system agentique",
+    "slug": "navire-control-tower",
+    "category": "Applications & IA",
+    "featured": false,
+    "demo": "",
+    "source": "",
+    "status": "Exploration UX · interfaces conceptuelles",
+    "need": "Rendre la coordination d’agents et l’état des projets lisibles dans un espace de contrôle commun.",
+    "features": [
+      "Carte centrale des projets et activités, navigation latérale et panneaux de détails.",
+      "Correspondance proposée entre agents, tâches, runs, approbations et états backend réels.",
+      "Règle de conception : les animations et indicateurs métier doivent suivre des événements vérifiables."
+    ],
+    "value": "Livrables de conception et de mapping fonctionnel uniquement ; l’application complète n’est pas implémentée.",
+    "gallery": [
+      {
+        "src": "/project-visuals/hermes-control-tower-map.jpg",
+        "alt": "Plan conceptuel de la Control Tower et des relations entre agents et projets",
+        "caption": "Plan de concept · navigation et entités"
+      },
+      {
+        "src": "/project-visuals/agentic-hud-design-system-v2.jpg",
+        "alt": "Écran conceptuel du HUD agentique N.A.VIRE",
+        "caption": "Planche UX · cockpit agentique"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Définir la scène de contrôle",
+        "detail": "Explorer une carte centrale, des entités projet et des panneaux de contexte.",
+        "state": "Concept documenté"
+      },
+      {
+        "title": "Relier les éléments aux données métier",
+        "detail": "Associer avatar à agent, flux à tâche/run, statut à état backend et revenu à événement vérifié.",
+        "state": "Contrat UX proposé"
+      },
+      {
+        "title": "Produire les planches visuelles",
+        "detail": "Créer des planches de référence pour la Control Tower et le HUD.",
+        "state": "Images disponibles"
+      },
+      {
+        "title": "Construire et connecter l’application",
+        "detail": "Implémenter les interactions et alimenter états/animations depuis les registres métier.",
+        "state": "Non implémenté"
+      }
+    ]
+  },
+  {
+    "id": "A31",
+    "name": "PIXEL — orchestration commerciale multi-agents",
+    "description": "Système de travail B2B qui organise des tâches spécialisées, centralise leur état et produit des démonstrations personnalisées à partir de configurations structurées.",
+    "stack": "Next.js 15, TypeScript, React 19, SQLite, better-sqlite3, Tailwind CSS 4, Vitest, Hermes",
+    "slug": "pixel-multi-agent-os",
+    "category": "Applications & IA",
+    "featured": true,
+    "demo": "",
+    "source": "",
+    "status": "Prototype privé · validation en cours",
+    "need": "Mettre en place un système d’opérations commerciales où le travail des agents, l’état des dossiers et les décisions humaines restent lisibles et traçables.",
+    "features": [
+      "Tableau de bord Next.js avec API et couche de données SQLite comme source de vérité.",
+      "Moteur de démonstrations personnalisées piloté par des fichiers de configuration.",
+      "Rôles spécialisés et tâches idempotentes ; les transitions critiques restent sous autorisation humaine."
+    ],
+    "value": "Le dépôt privé contient l’architecture, les applications dashboard et demo-engine, ainsi que les contrats de tâches et de configuration. Aucune démonstration publique ni résultat commercial n’est revendiqué.",
+    "steps": [
+      {
+        "title": "Concevoir le modèle opératoire",
+        "detail": "Relier objectifs commerciaux, dossiers, tâches et responsabilités d’agents dans un modèle lisible.",
+        "state": "Architecture documentée"
+      },
+      {
+        "title": "Établir une source de vérité",
+        "detail": "Construire une couche SQLite explicite derrière le tableau de bord et les routes API.",
+        "state": "Code présent dans le dépôt privé"
+      },
+      {
+        "title": "Encadrer l’orchestration",
+        "detail": "Définir rôles, contrats idempotents et transitions sensibles réservées à l’agent maître.",
+        "state": "Règles décrites dans la documentation"
+      },
+      {
+        "title": "Rendre les démonstrations paramétrables",
+        "detail": "Séparer moteur de rendu et configurations de démonstration pour réutiliser un parcours sans dupliquer l’application.",
+        "state": "Application séparée dans le dépôt"
+      },
+      {
+        "title": "Vérifier avant publication",
+        "detail": "Exécuter typecheck, tests, build et revue de sécurité sur l’état courant ; aucun lien de démo publique n’est disponible.",
+        "state": "À valider · projet privé"
+      }
+    ],
+    "gallery": []
   }
 ]

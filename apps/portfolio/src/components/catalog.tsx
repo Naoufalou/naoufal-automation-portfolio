@@ -1,11 +1,25 @@
 "use client";
 import { useState } from "react";
-import projects from "../../../../content/projects.json";
+import Image from "next/image";
+import { projects, type Project } from "../lib/projects";
 import Art from "./art";
-export function Card({ p }: { p: (typeof projects)[number] }) {
+export function Card({ p }: { p: Project }) {
+  const capture = p.gallery.find((visual) => visual.kind === "capture");
   return (
     <a className="project-card" href={"/realisations/" + p.slug}>
-      <Art id={p.id} />
+      {capture ? (
+        <div className="project-card-capture">
+          <Image
+            src={capture.src}
+            alt={capture.alt}
+            fill
+            sizes="(max-width: 700px) 92vw, (max-width: 1100px) 45vw, 30vw"
+          />
+          <span>Capture de la démo</span>
+        </div>
+      ) : (
+        <Art id={p.id} />
+      )}
       <div className="card-meta">
         <span>{p.category}</span>
         <span>↗</span>
@@ -15,6 +29,9 @@ export function Card({ p }: { p: (typeof projects)[number] }) {
       <div className="card-bottom">
         <span className={"status " + (p.demo ? "online" : "")}>{p.status}</span>
         <span>{p.stack.split(",")[0].split(";")[0]}</span>
+      </div>
+      <div className="card-steps">
+        Voir les étapes du projet <span>({p.steps.length})</span> →
       </div>
     </a>
   );

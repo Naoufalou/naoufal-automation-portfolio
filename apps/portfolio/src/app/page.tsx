@@ -1,4 +1,4 @@
-import projects from "../../../../content/projects.json";
+import { projects } from "../lib/projects";
 import { Card } from "../components/catalog";
 import Art from "../components/art";
 export default function Home() {
@@ -7,18 +7,19 @@ export default function Home() {
       <section className="hero">
         <div className="hero-copy">
           <p className="eyebrow">
-            <span className="live-dot" /> DÉVELOPPEUR IA & ENTREPRENEUR
+            <span className="live-dot" /> INGÉNIEUR IA · RECHERCHE APPLIQUÉE ·
+            DÉVELOPPEMENT
           </p>
           <h1>
-            Vos idées.
+            Explorer.
             <br />
-            Du code.
+            Concevoir.
             <br />
-            <em>Du concret.</em>
+            <em>Rendre réel.</em>
           </h1>
           <p className="hero-description">
-            Je conçois des applications et des agents IA pour transformer vos
-            opérations en produits utiles.
+            Je conçois et mets à l’épreuve des systèmes d’IA, des agents et des
+            applications — de l’architecture au prototype vérifiable.
           </p>
           <div className="hero-actions">
             <a className="button primary" href="/realisations">
@@ -29,8 +30,8 @@ export default function Home() {
             </a>
           </div>
           <div className="hero-note">
-            <span>01 / DE L’IDÉE AU PRODUIT</span>
-            <span>IA · AUTOMATISATION · WEB</span>
+            <span>RECHERCHE · ARCHITECTURE · PROTOTYPAGE</span>
+            <span>IA · DATA · PRODUITS</span>
           </div>
         </div>
         <div className="hero-visual">
@@ -38,7 +39,9 @@ export default function Home() {
           <div className="visual-label">
             <span>PROJET À LA UNE</span>
             <a href="/realisations/a01">na_agent / FounderOS ↗</a>
-            <p>Un environnement pour orchestrer agents, outils et mémoire.</p>
+            <p>
+              Explorer une architecture agentique, de la mémoire aux outils.
+            </p>
           </div>
         </div>
       </section>
@@ -66,7 +69,7 @@ export default function Home() {
           </a>
         </div>
         <div className="projects-grid">
-          {["A01", "A03", "A05", "A10", "L03", "A12"].map((id) => (
+          {["A01", "A31", "A29", "A27", "A05", "A28"].map((id) => (
             <Card key={id} p={projects.find((p) => p.id === id)!} />
           ))}
         </div>
@@ -112,16 +115,17 @@ export default function Home() {
         <div>
           <p className="eyebrow">03 / L’APPROCHE</p>
           <h2>
-            Un regard business.
+            Une approche de recherche.
             <br />
             <em>Les mains dans le code.</em>
           </h2>
         </div>
         <div>
           <p className="about-intro">
-            Je suis Naoufal, développeur IA et entrepreneur. Je pars d’un
-            problème opérationnel pour construire une solution que l’on peut
-            voir, utiliser et faire évoluer.
+            Je suis Naoufal, ingénieur-développeur et entrepreneur. Je pars
+            d’une question ou d’un besoin réel, j’explore les contraintes, puis
+            je construis un prototype dont on peut examiner le code, le parcours
+            et les limites.
           </p>
           <ol className="process">
             <li>

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="820" viewBox="0 0 1440 820" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1440" y2="820" gradientUnits="userSpaceOnUse"><stop stop-color="#172019"/><stop offset="1" stop-color="#101410"/></linearGradient>
+    <linearGradient id="edge" x1="300" y1="0" x2="1140" y2="820" gradientUnits="userSpaceOnUse"><stop stop-color="#C6F58A" stop-opacity=".65"/><stop offset="1" stop-color="#9DC6FF" stop-opacity=".55"/></linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="24"/></filter>
+    <style>.k{font:600 13px ui-monospace,monospace;letter-spacing:2px;fill:#A4AD9E}.title{font:500 30px system-ui,sans-serif;fill:#F1F2E9}.label{font:600 16px system-ui,sans-serif;fill:#F1F2E9}.sub{font:14px system-ui,sans-serif;fill:#A4AD9E}.node{fill:#1B201A;stroke:#56634E;stroke-width:1.2}.agent{fill:#182126;stroke:#4D7890;stroke-width:1.2}.edge{stroke:url(#edge);stroke-width:2;stroke-dasharray:6 8;opacity:.72}.tag{font:600 11px ui-monospace,monospace;letter-spacing:1px;fill:#C6F58A}</style>
+  </defs>
+  <rect width="1440" height="820" rx="20" fill="url(#bg)"/>
+  <circle cx="744" cy="400" r="270" fill="#C6F58A" fill-opacity=".07" filter="url(#glow)"/>
+  <text x="68" y="70" class="k">NA_AGENT / SYSTÈME MULTI-AGENT</text>
+  <text x="68" y="119" class="title">Une interface continue. Des tâches outillées en arrière-plan.</text>
+  <text x="68" y="151" class="sub">Schéma de synthèse fondé sur la documentation du projet · pas une capture d’écran.</text>
+
+  <rect x="82" y="239" width="270" height="132" rx="12" class="node"/>
+  <text x="108" y="276" class="tag">INTERFACES</text>
+  <text x="108" y="313" class="label">Client · Control Center</text>
+  <text x="108" y="341" class="sub">FounderOS · conversation</text>
+
+  <rect x="441" y="239" width="248" height="132" rx="12" class="node"/>
+  <text x="467" y="276" class="tag">GATEWAY</text>
+  <text x="467" y="313" class="label">API Python</text>
+  <text x="467" y="341" class="sub">dispatch · état des tâches</text>
+
+  <rect x="797" y="218" width="286" height="174" rx="12" class="agent"/>
+  <text x="823" y="258" class="tag">ORCHESTRATION</text>
+  <text x="823" y="296" class="label">Routeur & workers</text>
+  <text x="823" y="324" class="sub">recherche · code · web</text>
+  <text x="823" y="351" class="sub">fan-out · reprise après erreur</text>
+
+  <rect x="1187" y="239" width="178" height="132" rx="12" class="node"/>
+  <text x="1210" y="276" class="tag">OUTILS</text>
+  <text x="1210" y="313" class="label">13 actions</text>
+  <text x="1210" y="341" class="sub">autorisations à vérifier</text>
+
+  <path d="M352 305h89M689 305h108M1083 305h104" class="edge"/>
+  <path d="M1328 371v114H231v-114M917 392v94" class="edge"/>
+  <rect x="82" y="528" width="408" height="142" rx="12" class="node"/>
+  <text x="108" y="568" class="tag">MÉMOIRE PERSISTANTE</text>
+  <text x="108" y="607" class="label">Profil · faits · journal</text>
+  <text x="108" y="635" class="sub">Contexte réutilisable entre les tâches</text>
+  <rect x="516" y="528" width="400" height="142" rx="12" class="node"/>
+  <text x="542" y="568" class="tag">EXÉCUTION ASYNCHRONE</text>
+  <text x="542" y="607" class="label">La conversation continue</text>
+  <text x="542" y="635" class="sub">Le travail renvoie son état à l’interface</text>
+  <rect x="942" y="528" width="423" height="142" rx="12" class="node"/>
+  <text x="968" y="568" class="tag">VOIX & MODÈLES</text>
+  <text x="968" y="607" class="label">Transcrire · raisonner · répondre</text>
+  <text x="968" y="635" class="sub">Services locaux et distants selon le mode</text>
+  <text x="68" y="765" class="k">REPRÉSENTATION ARCHITECTURALE · COMPOSANTS EN DÉVELOPPEMENT</text>
+</svg>

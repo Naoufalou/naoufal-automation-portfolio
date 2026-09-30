@@ -8,11 +8,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://naoufal-automation-portfolio.vercel.app"),
   title: {
-    default: "Naoufal Ou — Développeur IA & entrepreneur",
+    default: "Naoufal Ou — Ingénieur IA, recherche & développement",
     template: "%s · Naoufal Ou",
   },
   description:
-    "Applications métier, agents IA et automatisations. Du besoin opérationnel au produit concret, avec Naoufal Ou.",
+    "Recherche appliquée, systèmes d’IA, agents et applications conçus et éprouvés par Naoufal Ou.",
   openGraph: { locale: "fr_FR", type: "website" },
 };
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -25,6 +25,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </a>
           <nav>
             <a href="/realisations">Réalisations</a>
+            <a href="/profil">Profil</a>
             <a href="/#approche">Approche</a>
             <a className="nav-cta" href="/contact">
               Parlons projet <span>↗</span>
@@ -36,7 +37,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <a className="brand" href="/">
             naoufal<span>®</span>
           </a>
-          <p>Développeur IA. Entrepreneur. Créateur de produits.</p>
+          <p>Ingénierie IA · Recherche appliquée · Développement produit</p>
           <div>
             <a
               href="https://github.com/Naoufalou"
