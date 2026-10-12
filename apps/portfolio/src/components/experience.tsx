@@ -344,8 +344,8 @@ function StoryVisual({ kind }: { kind: string }) {
     return (
       <div className="bouchon-gallery">
         <a className="bouchon-demo-preview" href="https://bouchon-demo.vercel.app/" target="_blank" rel="noreferrer">
-          <span className="bouchon-demo-label">DÉMO VERCEL · FOR4</span>
-          <img src="/project-visuals/bouchon-home.webp" alt="Capture de l’application Bouchon : carte simulée, Peugeot 208 de démonstration et actions de réservation" />
+          <span className="bouchon-demo-label">PHOTO DU VÉHICULE · DÉMO VERCEL FOR4</span>
+          <img src="https://bouchon-demo.vercel.app/assets/src/assets/for4-hybrid.74c0d4480a47d1c50d3df7b5c7fa8d9d.jpg" alt="Photo du véhicule affichée dans la démo Vercel Bouchon, expérience For4" />
           <span className="bouchon-demo-link">Explorer la démo ↗</span>
         </a>
         <div className="bouchon-gallery-pair">
