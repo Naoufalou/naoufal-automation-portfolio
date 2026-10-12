@@ -1,119 +1,13 @@
-import { projects } from "../lib/projects";
-import { Card } from "../components/catalog";
-import Art from "../components/art";
+import Experience from "../components/experience";
+
 export default function Home() {
   return (
-    <main>
-      <section className="hero">
-        <div className="hero-copy">
-          <p className="eyebrow">
-            <span className="live-dot" /> INGÉNIEUR IA · RECHERCHE APPLIQUÉE ·
-            DÉVELOPPEMENT
-          </p>
-          <h1>
-            Explorer.
-            <br />
-            Concevoir.
-            <br />
-            <em>Rendre réel.</em>
-          </h1>
-          <p className="hero-description">
-            Je conçois et mets à l’épreuve des systèmes d’IA, des agents et des
-            applications — de l’architecture au prototype vérifiable.
-          </p>
-          <div className="hero-actions">
-            <a className="button primary" href="/realisations">
-              Explorer mes réalisations <span>↗</span>
-            </a>
-            <a className="text-link" href="/contact">
-              Discuter de votre projet →
-            </a>
-          </div>
-          <div className="hero-note">
-            <span>RECHERCHE · ARCHITECTURE · PROTOTYPAGE</span>
-            <span>IA · DATA · PRODUITS</span>
-          </div>
-        </div>
-        <div className="hero-visual">
-          <Art id="A01" large />
-          <div className="visual-label">
-            <span>PROJET À LA UNE</span>
-            <a href="/realisations/a01">na_agent / FounderOS ↗</a>
-            <p>
-              Explorer une architecture agentique, de la mémoire aux outils.
-            </p>
-          </div>
-        </div>
-      </section>
-      <div className="stack-strip">
-        <span>UNE STACK, AU SERVICE DU BESOIN</span>
-        <strong>Python</strong>
-        <strong>TypeScript</strong>
-        <strong>React</strong>
-        <strong>Next.js</strong>
-        <strong>Supabase</strong>
-        <strong>n8n</strong>
-      </div>
-      <section className="section" id="realisations">
-        <div className="section-heading">
-          <div>
-            <p className="eyebrow">01 / SÉLECTION</p>
-            <h2>
-              Des idées devenues
-              <br />
-              <em>des réalisations.</em>
-            </h2>
-          </div>
-          <a className="text-link" href="/realisations">
-            Voir le catalogue complet ↗
-          </a>
-        </div>
-        <div className="projects-grid">
-          {["A01", "A31", "A29", "A27", "A05", "A28"].map((id) => (
-            <Card key={id} p={projects.find((p) => p.id === id)!} />
-          ))}
-        </div>
-      </section>
-      <section className="section services" id="approche">
-        <p className="eyebrow">02 / CE QUE NOUS POUVONS CONSTRUIRE</p>
-        <h2>
-          Moins de friction.
-          <br />
-          <em>Plus de possibilités.</em>
-        </h2>
-        <div className="service-grid">
-          {[
-            [
-              "01",
-              "Agents & automatisation",
-              "Relier vos outils, structurer vos données et automatiser les tâches répétitives.",
-              "Python / n8n / API / agents IA",
-            ],
-            [
-              "02",
-              "Applications & micro-SaaS",
-              "Transformer un usage métier précis en une application web, desktop ou mobile.",
-              "React / Next.js / Electron / Supabase",
-            ],
-            [
-              "03",
-              "Sites & acquisition",
-              "Présenter votre offre et créer un parcours clair jusqu’à la prise de contact.",
-              "Lovable / UI / parcours de conversion",
-            ],
-          ].map(([n, t, d, s]) => (
-            <article key={n}>
-              <span>{n} /</span>
-              <h3>{t}</h3>
-              <p>{d}</p>
-              <small>{s}</small>
-            </article>
-          ))}
-        </div>
-      </section>
-      <section className="section about">
+    <main className="experience-page">
+      <Experience />
+
+      <section className="section about" id="approche">
         <div>
-          <p className="eyebrow">03 / L’APPROCHE</p>
+          <p className="eyebrow">UNE MÉTHODE, DU LABORATOIRE AU PRODUIT</p>
           <h2>
             Une approche de recherche.
             <br />
@@ -122,36 +16,36 @@ export default function Home() {
         </div>
         <div>
           <p className="about-intro">
-            Je suis Naoufal, ingénieur-développeur et entrepreneur. Je pars
-            d’une question ou d’un besoin réel, j’explore les contraintes, puis
-            je construis un prototype dont on peut examiner le code, le parcours
-            et les limites.
+            Je pars d’un usage ou d’une question concrète, j’explore les
+            contraintes, puis je construis un système dont on peut examiner
+            l’architecture, les comportements et les limites.
           </p>
           <ol className="process">
             <li>
               <b>Cadrer le vrai besoin</b>
-              <span>Votre usage, vos contraintes et un périmètre clair.</span>
+              <span>Nommer le problème et les preuves attendues.</span>
             </li>
             <li>
-              <b>Construire une première version</b>
-              <span>Un produit concret pour confronter l’idée au terrain.</span>
+              <b>Prototyper le système</b>
+              <span>Relier données, modèles, outils et interfaces.</span>
             </li>
             <li>
-              <b>Vérifier, livrer, faire évoluer</b>
-              <span>Du code structuré et des limites documentées.</span>
+              <b>Vérifier, livrer, apprendre</b>
+              <span>Documenter ce qui marche et ce qui reste à tester.</span>
             </li>
           </ol>
         </div>
       </section>
+
       <section className="contact-banner">
-        <p className="eyebrow">LE PROCHAIN PROJET POURRAIT ÊTRE LE VÔTRE.</p>
+        <p className="eyebrow">INGÉNIERIE IA · PRODUIT · RECHERCHE APPLIQUÉE</p>
         <h2>
-          On construit
+          Une idée à mettre
           <br />
-          <em>quelque chose ?</em>
+          <em>à l’épreuve ?</em>
         </h2>
         <a className="button primary" href="/contact">
-          Parlons de votre besoin ↗
+          Parlons du prochain système <span>↗</span>
         </a>
       </section>
     </main>
