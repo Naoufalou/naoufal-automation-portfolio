@@ -40,8 +40,12 @@ for (const p of projects) {
       visual.src.startsWith("/project-visuals/"),
       `${p.id}: gallery image must be a local public visual`,
     );
+    const candidates = [
+      new URL(`../public${visual.src}`, import.meta.url),
+      new URL(`../apps/portfolio/public${visual.src}`, import.meta.url),
+    ];
     assert(
-      existsSync(new URL(`../public${visual.src}`, import.meta.url)),
+      candidates.some((candidate) => existsSync(candidate)),
       `${p.id}: missing visual file ${visual.src}`,
     );
     assert(
