@@ -6,7 +6,7 @@ export default function sitemap() {
     "/realisations",
     "/profil",
     "/contact",
-    ...stories.map((story) => "/projets/" + story.id),
+    ...stories.map((story) => "/projets/" + story.slug),
     ...projects.map((p) => "/realisations/" + p.slug),
   ].map((path) => ({
     url: "https://naoufal-automation-portfolio.vercel.app" + path,

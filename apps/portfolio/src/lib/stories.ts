@@ -1,411 +1,429 @@
-// Récits éditoriaux du parcours d'accueil. Faits étayés par les sources
-// vérifiées (landing IAPAS, démo Bouchon, fiche Gumroad, dépôts publics).
-// Aucun chiffre commercial ni état de production n'est avancé ici.
+// Récits des projets principaux : accueil et pages /projets/[slug].
+// Chaque fait provient du dépôt ou du site du projet. Une capture sans `src`
+// est un emplacement en attente d'une vraie capture d'application, jamais une maquette.
 
-export type StoryVisualKind =
-  | "constellation"
-  | "starmap-captures"
-  | "iapas-captures"
-  | "bouchon-captures"
-  | "gumroad-mockup"
-  | "oneshot-schema";
+export type Formation = "core" | "constellation" | "city" | "car" | "bubbles" | "funnel" | "scatter";
 
-export type StoryGalleryItem = {
-  src: string;
-  alt: string;
-  caption: string;
-  nature: "capture" | "mockup" | "schema" | "illustration";
-  source: string;
+export type StoryMedia = {
+  label: string;
+  /** Écran attendu, affiché tant que la capture n'a pas été fournie. */
+  expected: string;
+  src?: string;
+  /** Origine de la capture, affichée en légende. */
+  origin?: string;
+  orientation: "portrait" | "landscape";
 };
+
+export type StoryLink = { label: string; url: string; note: string };
 
 export type Story = {
-  id: string;
+  slug: string;
   number: string;
-  theme: "memory" | "worlds" | "mobility" | "business" | "delivery";
-  tag: string;
-  title: string;
-  subtitle: string;
-  problem: string;
-  research: string;
-  decision: string;
-  build: { title: string; detail: string; state: string }[];
-  proof: string;
-  limits: string;
+  name: string;
+  kicker: string;
+  tagline: string;
+  accent: string;
+  formation: Formation;
+  role: string;
+  destination: StoryLink | null;
+  secondary: StoryLink | null;
+  problem: { title: string; body: string };
+  research: { title: string; body: string; points: string[] };
+  decisions: { title: string; detail: string }[];
+  steps: { title: string; detail: string }[];
+  proofs: string[];
+  limits: string[];
+  result: string;
+  skills: SkillId[];
   stack: string[];
-  visual: StoryVisualKind;
-  visualLabel: string;
-  gallery: StoryGalleryItem[];
-  /** Destination publique vérifiée (HTTP 200), sinon null. */
-  destination: { label: string; url: string } | null;
-  /** Précision exigée quand la destination n'est pas prouvée liée au projet. */
-  destinationNote?: string;
-  source: { label: string; url: string } | null;
-  /** Validation restante, affichée telle quelle. */
-  openQuestion?: string;
+  media: StoryMedia[];
 };
+
+export const skills = [
+  { id: "systems", label: "Architecture de systèmes IA" },
+  { id: "agents", label: "Agents & orchestration" },
+  { id: "llm", label: "LLM appliqués" },
+  { id: "graph", label: "Graphes & visualisation" },
+  { id: "realtime3d", label: "3D temps réel" },
+  { id: "typescript", label: "Full-stack TypeScript" },
+  { id: "python", label: "Python · FastAPI" },
+  { id: "mobile", label: "Mobile React Native" },
+  { id: "desktop", label: "Desktop Electron" },
+  { id: "automation", label: "Automatisation navigateur & messagerie" },
+  { id: "reliability", label: "Fiabilité, tests & preuves" },
+  { id: "product", label: "Produit & UX" },
+] as const;
+
+export type SkillId = (typeof skills)[number]["id"];
 
 export const stories: Story[] = [
   {
-    id: "qwerty-myriaz",
+    slug: "qwerty-myriaz",
     number: "01",
-    theme: "memory",
-    tag: "MÉMOIRE & ORCHESTRATION · IA AGENTIQUE",
-    title: "QWERTY × Myriaz",
-    subtitle: "Donner une forme navigable à la mémoire d’un système.",
-    problem:
-      "Quand les projets, les outils et les connaissances se multiplient, le fil se perd : le contexte dort dans des notes isolées et chaque reprise repart de zéro.",
-    research:
-      "Le parti pris de QWERTY est un système qui se souvient, agit et apprend. Sa carte stellaire rend visible ce qui, dans une liste de tâches, reste invisible : ce qui est relié à quoi, ce qui est ancien, ce qui est neuf.",
-    decision:
-      "Organiser le récit autour d’une constellation : un cœur, des anneaux temporels et des nœuds reliés. Les relations deviennent lisibles, les regroupements restent navigables et chaque élément garde sa provenance.",
-    build: [
-      {
-        title: "Cœur de glyphes",
-        detail:
-          "Un point d’entrée unique depuis lequel les nœuds s’ordonnent par ancienneté : plus on s’éloigne du centre, plus la trace est récente.",
-        state: "Conçu",
-      },
-      {
-        title: "Mémoire en losanges",
-        detail:
-          "Les connaissances sont des objets persistants que l’on peut relier à un projet, pas des fichiers éparpillés.",
-        state: "Conçu",
-      },
-      {
-        title: "Nœuds vivants",
-        detail:
-          "Les connexions s’éclairent au focus : le graphe explique les relations sans obliger à tout lire.",
-        state: "Conçu",
-      },
-      {
-        title: "Schéma éditorial",
-        detail:
-          "La constellation publiée ici est un schéma inspiré de ces principes, pas une connexion aux données privées du graphe.",
-        state: "Affiché comme schéma",
-      },
-    ],
-    proof:
-      "Le site de démonstration de QWERTY est en ligne et consultable. La constellation présentée ci-contre est un schéma éditorial : elle illustre les relations de connaissance, elle n’affiche aucune donnée privée.",
-    limits:
-      "Le dépôt Myriaz est privé. Aucune métrique de graphe, aucun volume de nœuds et aucun résultat d’usage ne sont avancés sur cette page.",
-    stack: ["Python", "React", "WebSocket", "SQLite", "Graphify"],
-    visual: "starmap-captures",
-    visualLabel: "Captures du site de démonstration QWERTY",
-    gallery: [
-      {
-        src: "/project-visuals/qwerty-starmap-hero.png",
-        alt: "Ouverture du site de démonstration QWERTY : titre, chronologie radiale et carte stellaire en arrière-plan",
-        caption: "Ouverture · « Un système qui se souvient, agit et apprend »",
-        nature: "capture",
-        source: "qwerty-starmap-motion-ultra.vercel.app",
-      },
-      {
-        src: "/project-visuals/qwerty-starmap-graph.png",
-        alt: "Carte stellaire du site QWERTY : nœuds, anneaux temporels et légende d’interaction",
-        caption: "Carte stellaire · nœuds reliés et anneaux temporels",
-        nature: "capture",
-        source: "qwerty-starmap-motion-ultra.vercel.app",
-      },
-      {
-        src: "/project-visuals/qwerty-starmap-deep.png",
-        alt: "Vue intermédiaire du parcours QWERTY après défilement",
-        caption: "Parcours · enchaînement des panneaux au défilement",
-        nature: "capture",
-        source: "qwerty-starmap-motion-ultra.vercel.app",
-      },
-    ],
+    name: "QWERTY × Myriaz",
+    kicker: "Système de connaissance · graphe navigable",
+    tagline: "Un système qui se souvient, agit et apprend.",
+    accent: "#c6f58a",
+    formation: "constellation",
+    role: "Conception, architecture, gateway, interface du graphe",
     destination: {
-      label: "Voir la démo QWERTY",
+      label: "Voir QWERTY en ligne",
       url: "https://qwerty-starmap-motion-ultra.vercel.app/",
+      note: "Site de présentation · carte stellaire interactive",
     },
-    source: null,
+    secondary: null,
+    problem: {
+      title: "La mémoire se disperse plus vite que le travail n’avance.",
+      body: "Projets, notes, code et sessions d’agents s’accumulent dans des outils séparés. Chaque nouvel agent repart de zéro, et personne ne voit les relations entre ce qui a été fait, appris et livré.",
+    },
+    research: {
+      title: "Lire la mémoire comme une carte.",
+      body: "Avant d’écrire une ligne, j’ai étudié le langage visuel du Star Map de Hermes et les briques existantes : mémoire sémantique, graphe de code, traces d’exécution.",
+      points: [
+        "Hindsight pour la mémoire, Graphify pour le graphe de code, OpenTelemetry pour les traces.",
+        "Un cœur, des anneaux temporels, des orbes projet : le temps et les relations deviennent lisibles.",
+        "Un protocole commun REST, WebSocket et MCP pour que Claude Code, Codex et Hermes partagent le même contexte.",
+      ],
+    },
+    decisions: [
+      {
+        title: "Un control plane local",
+        detail: "Myriaz est une gateway FastAPI locale au-dessus de services indépendants, avec un registre SQLite et sans Docker.",
+      },
+      {
+        title: "Aucune donnée inventée",
+        detail: "Chaque source répond avec un statut explicite : ok, vide, indisponible ou désactivée. Une valeur absente n’est pas émise.",
+      },
+      {
+        title: "Le mouvement raconte un fait",
+        detail: "Une impulsion du graphe correspond à une trace réelle. Un événement qui n’a pas eu lieu n’anime rien.",
+      },
+      {
+        title: "Divulgation progressive",
+        detail: "QWERTY ouvre un projet comme une orbe : missions, artefacts et apprentissages n’apparaissent que s’ils existent.",
+      },
+    ],
+    steps: [
+      { title: "Cadrage & protocole", detail: "Contrats REST, WebSocket et MCP ; budgets de requête plafonnés côté serveur." },
+      { title: "Gateway & télémétrie", detail: "FastAPI, registre SQLite, spans OpenTelemetry convertis en événements temps réel." },
+      { title: "Serveur MCP", detail: "Outils context, code_query, health et projects exposés aux agents de code." },
+      { title: "Graphe vivant", detail: "Star Map sur données réelles : environ 1 700 nœuds, amas calculés par similarité, type, secteur et technologie." },
+      { title: "Récit QWERTY", detail: "Site produit publié : carte stellaire, focus projet, timeline d’événements." },
+    ],
+    proofs: [
+      "Interface : 745 tests Vitest verts et build vert (état documenté du 3 octobre 2026).",
+      "Gateway couverte par une suite pytest dédiée.",
+      "Site QWERTY en ligne.",
+    ],
+    limits: [
+      "Dépôt privé : le graphe tourne sur des données locales et n’est pas exposé publiquement.",
+      "Le site QWERTY présente le concept ; il n’est pas branché aux données personnelles.",
+    ],
+    result: "Une mémoire de travail partagée entre agents, interrogeable et visible, où chaque élément garde sa provenance.",
+    skills: ["systems", "agents", "graph", "python", "typescript", "reliability", "product"],
+    stack: ["Python 3.12", "FastAPI", "SQLite", "OpenTelemetry", "MCP", "React", "TypeScript", "WebSocket", "Vitest"],
+    media: [
+      {
+        label: "Focus projet",
+        expected: "Focus projet",
+        src: "/project-visuals/qwerty-starmap-graph.png",
+        origin: "Capture du site QWERTY · orbe projet et facettes",
+        orientation: "landscape",
+      },
+      { label: "Graphe vivant", expected: "Vue globale du graphe Myriaz avec ses amas", orientation: "landscape" },
+      { label: "Provenance", expected: "Détail d’un nœud ou chat de rappel avec ses sources", orientation: "landscape" },
+    ],
   },
   {
-    id: "iapas-game",
+    slug: "iapas-game",
     number: "02",
-    theme: "worlds",
-    tag: "PRODUIT & INTERACTION · MONDE 3D",
-    title: "IAPAS",
-    subtitle: "Un poste de pilotage pour vos projets, pas une fenêtre de chat.",
-    problem:
-      "Les agents IA vivent dans des conversations qu’on perd de vue. On ne sait plus ce qui est fini, ce qui est bloqué et ce qui attend une décision.",
-    research:
-      "L’idée retenue : donner à chaque projet une présence visuelle et un état lisible d’un coup d’œil. Le projet devient un lieu — un village, une planète — et la mission se lit sur la carte.",
-    decision:
-      "Rendre l’état réel plutôt que décoratif : statuts, agents et livrables proviennent des événements du moteur. Et garder l’humain dans la boucle — toute action hors du dossier du projet demande une validation explicite.",
-    build: [
+    name: "IAPAS-Game",
+    kicker: "Agents IA · monde 3D · orchestration",
+    tagline: "Vos projets deviennent un monde. Vos agents IA y travaillent.",
+    accent: "#7de8ff",
+    formation: "city",
+    role: "Produit, backend d’orchestration, scène 3D",
+    destination: {
+      label: "Découvrir IAPAS",
+      url: "https://iapas-landing.vercel.app/",
+      note: "Site du produit",
+    },
+    secondary: null,
+    problem: {
+      title: "Les agents IA travaillent dans une conversation qu’on perd de vue.",
+      body: "On ne sait pas ce qui est fini, bloqué ou en attente. Faute de garde-fous clairs, on hésite à leur donner de l’autonomie, et les livrables finissent éparpillés.",
+    },
+    research: {
+      title: "Rendre l’état d’un orchestrateur lisible d’un regard.",
+      body: "Plutôt qu’une fenêtre de chat, une métaphore spatiale : chaque projet devient un lieu, chaque agent un personnage, chaque blocage une bulle visible.",
+      points: [
+        "Un bâtiment par projet réellement reçu : sans données, la carte reste vide.",
+        "Contrainte matérielle : un GPU local et une VRAM limitée, donc un seul modèle chargé à la fois.",
+        "L’humain garde la main : toute action hors du dossier du projet demande une validation.",
+      ],
+    },
+    decisions: [
       {
-        title: "Le projet est un monde",
-        detail:
-          "Chaque projet occupe un lieu dans un monde 3D partagé : on voit d’un regard où ça avance et où ça attend.",
-        state: "Conçu",
+        title: "Micro-tâches atomiques",
+        detail: "Chaque mission devient une chaîne de tâches SQLite (WAL) avec lease, idempotence, dépendances et retry plafonné.",
       },
       {
-        title: "L’humain garde la main",
-        detail:
-          "Demande visible, décision explicite : Approuver ou Refuser. Aucune action sensible n’est automatique.",
-        state: "Conçu",
+        title: "Modèle figé par tâche",
+        detail: "Provider, modèle et digest sont verrouillés avant l’appel à Hermes. Un changement global n’altère pas un run en cours.",
       },
       {
-        title: "La clé reste chez vous",
-        detail:
-          "Clé API apportée par l’utilisateur, stockée dans le gestionnaire d’identification du système, jamais dans un fichier. Application locale d’abord.",
-        state: "Conçu",
+        title: "VRAM maîtrisée",
+        detail: "Un seul modèle Ollama chargé, déchargé après chaque tâche, sous un lease global d’inférence.",
       },
       {
-        title: "Application Godot 4.7",
-        detail:
-          "L’application actuelle est construite avec Godot 4.7 pour Windows x64 et macOS Apple Silicon. Les captures publiées sont des prototypes du monde et de ses planètes.",
-        state: "Prototypes publiés",
-      },
-    ],
-    proof:
-      "Une page publique présente le projet, ses choix de conception et ses prototypes. Le moteur embarqué est Hermes Agent de Nous Research, installé au premier lancement dans un dossier isolé.",
-    limits:
-      "Les captures publiées sont des prototypes du monde, pas des données de démonstration. La version macOS n’est pas annoncée comme testée ni signée. Le lien entre la page publique et le dépôt de développement n’est pas encore confirmé : à valider avant de la présenter comme la destination officielle du projet.",
-    stack: ["Godot 4.7", "Hermes Agent", "Clé API locale", "Windows", "macOS"],
-    visual: "iapas-captures",
-    visualLabel: "Captures publiées · prototypes du monde IAPAS",
-    gallery: [
-      {
-        src: "/project-visuals/iapas-monde-village.png",
-        alt: "Prototype web du monde IAPAS : un village avec des bâtiments-projets et des agents",
-        caption: "Monde-village · bâtiments-projets et agents",
-        nature: "capture",
-        source: "iapas-landing.vercel.app",
-      },
-      {
-        src: "/project-visuals/iapas-monde-planete.png",
-        alt: "Vue d’une planète-projet du monde IAPAS sur grand écran",
-        caption: "Planète-projet · vue bureau",
-        nature: "capture",
-        source: "iapas-landing.vercel.app",
-      },
-      {
-        src: "/project-visuals/iapas-monde-mobile.png",
-        alt: "Prototype d’une planète-projet IAPAS affiché sur mobile",
-        caption: "Planète-projet · affichage mobile",
-        nature: "capture",
-        source: "iapas-landing.vercel.app",
+        title: "Une scène branchée sur l’état réel",
+        detail: "React Three Fiber reçoit les événements par SSE : statuts, agents actifs, validations et livrables.",
       },
     ],
-    destination: null,
-    destinationNote:
-      "Page publique IAPAS à valider comme destination du projet avant publication du lien.",
-    source: null,
-    openQuestion:
-      "Confirmer que iapas-landing.vercel.app est bien la destination publique du dépôt de développement avant d’afficher un lien « site du projet ».",
+    steps: [
+      { title: "Vertical slice", detail: "Hermes Commander, graphe LangGraph (statut, mode, mission) et registre SQLite." },
+      { title: "Inference gateway", detail: "Routage par rôle, inventaire Ollama sans téléchargement, budget cloud plafonné." },
+      { title: "Cockpit 3D", detail: "Caméra orbitale, agents cliquables, HUD alimenté par SQLite et SSE." },
+      { title: "Ville & personnages", detail: "Quartier nocturne, un bâtiment par projet, import de personnages GLB stockés localement." },
+      { title: "Produit IAPAS", detail: "Village et planètes-projets, validations Approuver/Refuser, clé API de l’utilisateur." },
+    ],
+    proofs: [
+      "26 tests automatisés sur 26 réussis, ESLint propre, build de production réussi.",
+      "Playtest Chromium : WebGL actif, zéro erreur console, cadrages 1440×900 et 390×844.",
+      "Benchmark réel du codeur local : 2 060 MiB de VRAM avec un contexte de 4 096 tokens.",
+    ],
+    limits: [
+      "Le flux complet avec génération réelle et progression des bâtiments reste à qualifier.",
+      "Transcription vocale non opérationnelle tant qu’aucun moteur local n’a été audité.",
+    ],
+    result: "Un poste de pilotage où l’on voit d’un coup d’œil où les agents avancent, où ça bloque et où l’on attend un feu vert.",
+    skills: ["agents", "systems", "llm", "realtime3d", "typescript", "reliability", "product"],
+    stack: ["TypeScript", "Node.js", "LangGraph", "SQLite WAL", "Hermes Agent", "Ollama", "React Three Fiber", "SSE"],
+    media: [
+      { label: "Cockpit 3D", expected: "Vue d’ensemble de la scène 3D avec les agents", orientation: "landscape" },
+      { label: "Mission en cours", expected: "Tiroir opérationnel ouvert sur une mission", orientation: "landscape" },
+      { label: "Validation humaine", expected: "Popup Accepter / Modifier / Refuser", orientation: "landscape" },
+      { label: "Mobile", expected: "Cockpit en cadrage mobile", orientation: "portrait" },
+    ],
   },
   {
-    id: "bouchon",
+    slug: "bouchon",
     number: "03",
-    theme: "mobility",
-    tag: "MOBILITÉ PARTAGÉE · APPLICATION",
-    title: "Bouchon",
-    subtitle: "Faire du partage d’un véhicule une expérience coordonnée.",
-    problem:
-      "Une voiture de groupe se gère dans cinq endroits différents : qui l’a réservée, quand elle est libre, qui fait les courses, comment le loyer se répartit.",
-    research:
-      "Le besoin n’est pas un catalogue de véhicules mais une coordination : découvrir le véhicule du groupe, réserver un créneau, voir le planning commun et organiser les trajets au même endroit.",
-    decision:
-      "Séparer les règles de réservation et de disponibilité des écrans, puis structurer l’expérience autour des tâches concrètes du groupe. Le planning devient la pièce centrale : jour, semaine, mois.",
-    build: [
-      {
-        title: "Le véhicule du groupe",
-        detail:
-          "Une fiche qui présente le véhicule, son quartier et le loyer total à partager entre locataires.",
-        state: "Déployé en démo",
-      },
-      {
-        title: "Le planning commun",
-        detail:
-          "Disponibilités, réservations et trajets réunis dans une seule vue, avec bascule jour / semaine / mois.",
-        state: "Déployé en démo",
-      },
-      {
-        title: "Les trajets à faire ensemble",
-        detail:
-          "Un espace pour les déplacements et les courses partagés, distinct de la réservation du véhicule.",
-        state: "Déployé en démo",
-      },
-      {
-        title: "Le groupe et son loyer",
-        detail:
-          "Accès au groupe, statut de membre et explication de la répartition du loyer.",
-        state: "Déployé en démo",
-      },
-    ],
-    proof:
-      "La démo web est publiée et consultable. Les captures ci-contre proviennent de cette démo en fonctionnement : l’écran d’accueil du véhicule de groupe et le planning du mois.",
-    limits:
-      "Les données affichées — véhicule, quartier, position, loyer, disponibilités — sont des exemples simulés. L’exécution native iOS et Android n’est pas validée.",
-    stack: ["React Native", "Expo", "TypeScript", "Zustand", "AsyncStorage"],
-    visual: "bouchon-captures",
-    visualLabel: "Captures de la démo web publiée",
-    gallery: [
-      {
-        src: "/project-visuals/bouchon-home.webp",
-        alt: "Écran d’accueil de la démo Bouchon : véhicule du groupe, loyer et carte du quartier",
-        caption: "Accueil · le véhicule du groupe et son loyer",
-        nature: "capture",
-        source: "bouchon-demo.vercel.app",
-      },
-      {
-        src: "/project-visuals/bouchon-live-calendar.png",
-        alt: "Écran planning de la démo Bouchon : calendrier du mois, jour sélectionné et bouton de réservation",
-        caption: "Planning · vue mensuelle et réservation",
-        nature: "capture",
-        source: "bouchon-demo.vercel.app/calendrier",
-      },
-      {
-        src: "/project-visuals/bouchon-calendar.webp",
-        alt: "Capture du calendrier de réservation Bouchon",
-        caption: "Planning · disponibilités du groupe",
-        nature: "capture",
-        source: "démo locale Bouchon",
-      },
-      {
-        src: "/project-visuals/bouchon-owner.webp",
-        alt: "Capture de l’espace propriétaire de la démo Bouchon",
-        caption: "Espace propriétaire · vue groupe",
-        nature: "capture",
-        source: "démo locale Bouchon",
-      },
-    ],
+    name: "Bouchon",
+    kicker: "Mobilité partagée · application mobile",
+    tagline: "Une voiture partagée, simplement.",
+    accent: "#ffb86b",
+    formation: "car",
+    role: "Conception produit, règles métier, application Expo",
     destination: {
-      label: "Voir la démo Bouchon",
+      label: "Ouvrir la démo web",
       url: "https://bouchon-demo.vercel.app/",
+      note: "Export web de l’application · données simulées",
     },
-    source: null,
+    secondary: null,
+    problem: {
+      title: "Partager une voiture à plusieurs, c’est surtout partager des règles.",
+      body: "Plusieurs membres se partagent une même voiture sur un mois. Qui l’a, quand, où est-elle, qui peut rejoindre le groupe ? Sans outil, tout passe par des messages.",
+    },
+    research: {
+      title: "Deux rôles, deux parcours complets.",
+      body: "J’ai modélisé les deux personas du service, le propriétaire et le membre, puis audité une base open source avant d’en réutiliser des éléments.",
+      points: [
+        "Propriétaire : demandes d’adhésion, membres, disponibilités, véhicule.",
+        "Membre : position, réservation de créneaux, historique, groupe.",
+        "Vérification de la licence de la base réutilisée avant intégration.",
+      ],
+    },
+    decisions: [
+      {
+        title: "Les règles dans le domaine",
+        detail: "Réservation, disponibilité et adhésion vivent dans des modules testés, séparés des écrans.",
+      },
+      {
+        title: "Une carte honnête",
+        detail: "La position est dessinée et étiquetée « carte simulée » : aucun GPS ni fond de carte présenté comme réel.",
+      },
+      {
+        title: "Changer de rôle sans compte",
+        detail: "Un sélecteur de persona permet de parcourir les deux expériences en démonstration locale.",
+      },
+    ],
+    steps: [
+      { title: "Domaine", detail: "Règles de réservation, demandes d’adhésion et affichage des dates." },
+      { title: "Écrans", detail: "Expo Router : accueil, groupe, calendrier, réservations, profil, espace propriétaire." },
+      { title: "État", detail: "Store Zustand persistant avec AsyncStorage." },
+      { title: "Web", detail: "Export web de production publié sur Vercel." },
+      { title: "Appareils", detail: "Validation iOS/Android sur simulateur ou appareil : prochaine étape." },
+    ],
+    proofs: [
+      "84 tests de logique métier et de store (Jest).",
+      "Typecheck, export web et expo-doctor (21/21) exécutés avec succès.",
+      "Démo web en ligne.",
+    ],
+    limits: [
+      "Véhicule, loyer et position sont des exemples simulés ; aucun paiement réel.",
+      "L’exécution native iOS/Android n’est pas encore confirmée.",
+    ],
+    result: "Un parcours d’autopartage complet et démontrable, dont chaque règle est testée avant d’être affichée.",
+    skills: ["mobile", "typescript", "product", "reliability"],
+    stack: ["React Native", "Expo SDK 57", "TypeScript", "expo-router", "Zustand", "AsyncStorage", "Jest"],
+    media: [
+      {
+        label: "Accueil",
+        expected: "Accueil",
+        src: "/project-visuals/bouchon-home.webp",
+        origin: "Capture de l’application · simulateur iOS · carte simulée",
+        orientation: "portrait",
+      },
+      {
+        label: "Calendrier",
+        expected: "Calendrier",
+        src: "/project-visuals/bouchon-calendar.webp",
+        origin: "Capture de l’application · réservations de démonstration",
+        orientation: "portrait",
+      },
+      {
+        label: "Espace propriétaire",
+        expected: "Espace propriétaire",
+        src: "/project-visuals/bouchon-owner.webp",
+        origin: "Capture de l’application · données fictives",
+        orientation: "portrait",
+      },
+    ],
   },
   {
-    id: "pixelcreate",
+    slug: "pixelcreate",
     number: "04",
-    theme: "business",
-    tag: "OUTILLAGE B2B · AUTOMATISATION LOCALE",
-    title: "PixelCreate",
-    subtitle: "Structurer un travail commercial en outils utilisables.",
-    problem:
-      "La prospection sortante se fait à la main, compte par compte, message par message. Les outils en ligne mutualisés exposent les numéros à une détection groupée.",
-    research:
-      "L’approche retenue : garder le traitement sur la machine de l’utilisateur, distribuer la charge entre plusieurs comptes et faire varier chaque message pour qu’aucun envoi ne ressemble au précédent.",
-    decision:
-      "Une application de bureau locale plutôt qu’un service distant : l’utilisateur apporte ses propres comptes, la charge est répartie en alternance entre eux et les envois sont espacés pour rester dans un rythme humain.",
-    build: [
-      {
-        title: "Comptes isolés en local",
-        detail:
-          "Plusieurs comptes connectés par scan de QR code, sessions isolées et conservées sur la machine.",
-        state: "Décrit dans la fiche produit",
-      },
-      {
-        title: "Réécriture par message",
-        detail:
-          "Chaque destinataire reçoit une formulation distincte d’un même contenu, pour éviter les envois identiques.",
-        state: "Décrit dans la fiche produit",
-      },
-      {
-        title: "Répartition en alternance",
-        detail:
-          "Les comptes expéditeurs se relaient au sein d’une même campagne pour diviser la charge, avec une limite quotidienne par numéro.",
-        state: "Décrit dans la fiche produit",
-      },
-      {
-        title: "Installateurs macOS et Windows",
-        detail:
-          "La fiche produit annonce un installateur pour chaque système et un guide de prise en main.",
-        state: "Annoncé sur la fiche produit",
-      },
-    ],
-    proof:
-      "La seule destination publique vérifiée est la fiche produit publiée en ligne. Elle décrit l’application, ses modules et son installation. Le visuel de cette fiche est une maquette d’illustration, pas une capture de l’application.",
-    limits:
-      "Aucune démo web n’est déployée pour ce produit : le prototype fonctionne en local. Aucune campagne, aucun envoi et aucun résultat commercial ne sont présentés ici. De vraies captures de l’application nécessitent de la lancer en local.",
-    stack: ["Application locale", "macOS", "Windows x64", "Multi-comptes"],
-    visual: "gumroad-mockup",
-    visualLabel: "Maquette de la fiche produit publiée · pas une capture",
-    gallery: [
-      {
-        src: "/project-visuals/pixelcreate-product-mockup.png",
-        alt: "Maquette d’illustration de la fiche produit PixelCreate publiée en ligne",
-        caption: "Fiche produit · visuel d’illustration",
-        nature: "mockup",
-        source: "naoufal30.gumroad.com",
-      },
-    ],
+    name: "PixelCreate",
+    kicker: "Application desktop · prospection WhatsApp assistée par IA",
+    tagline: "Prospecter à plusieurs voix, sans mettre ses numéros en danger.",
+    accent: "#ff8ad8",
+    formation: "bubbles",
+    role: "Produit, application Electron, moteur de messagerie, distribution",
     destination: {
-      label: "Voir la fiche produit",
+      label: "Voir la page produit",
       url: "https://naoufal30.gumroad.com/l/gjugsq",
+      note: "Application macOS et Windows",
     },
-    source: {
-      label: "Dépôt public associé",
+    secondary: {
+      label: "Dépôt public",
       url: "https://github.com/Naoufalou/Pixelcreate-AutoWhatsapp",
+      note: "Présentation et téléchargement",
     },
-    openQuestion:
-      "Captures réelles à produire en lançant l’application Electron en local — la maquette de la fiche produit ne peut pas servir de preuve d’interface.",
+    problem: {
+      title: "La prospection WhatsApp est répétitive, et l’automatiser naïvement coûte des numéros.",
+      body: "Copier-coller un même message à des dizaines de contacts prend du temps, paraît générique et expose les comptes aux blocages.",
+    },
+    research: {
+      title: "Changer de couche plutôt qu’empiler des rustines.",
+      body: "La première version pilotait des webviews Chromium : instable et gourmand. J’ai réécrit le moteur sur le protocole multi-appareils, où l’application est vue comme un appareil compagnon.",
+      points: [
+        "Sessions isolées par compte, stockées localement.",
+        "Cadence humaine : indicateur de frappe et délai proportionnel à la longueur du message.",
+        "Quotas quotidiens par numéro et bascule automatique entre comptes.",
+      ],
+    },
+    decisions: [
+      {
+        title: "Moteur multi-appareils natif",
+        detail: "Abandon des webviews pour un client headless (Baileys) : plus stable et beaucoup plus léger en mémoire.",
+      },
+      {
+        title: "Un message unique par contact",
+        detail: "L’IA (Gemini ou modèle local) reformule chaque message ; les pièces jointes partent avec la légende personnalisée.",
+      },
+      {
+        title: "Des garde-fous par défaut",
+        detail: "Rotation des expéditeurs, 30 messages par jour et par numéro recommandés, pauses aléatoires.",
+      },
+    ],
+    steps: [
+      { title: "Prototype", detail: "Client Electron à webviews pour valider le parcours de campagne." },
+      { title: "Réécriture du moteur", detail: "Passage au protocole multi-appareils, cache de QR code, sessions isolées." },
+      { title: "Campagnes", detail: "Import CSV/TXT, pièces jointes, historique détaillé de chaque envoi." },
+      { title: "Préchauffage", detail: "Conversations entre comptes connectés pour entretenir leur activité." },
+      { title: "Distribution", detail: "Installateurs macOS et Windows, mises à jour automatiques, page produit." },
+    ],
+    proofs: ["Application packagée pour macOS (.dmg) et Windows (.exe).", "Page produit publique en ligne."],
+    limits: [
+      "Aucun volume d’envoi, taux de réponse ni chiffre de vente n’est revendiqué ici.",
+      "L’usage doit respecter les conditions de WhatsApp et le consentement des destinataires.",
+    ],
+    result: "Une application desktop distribuée, née d’une refonte d’architecture motivée par la stabilité.",
+    skills: ["desktop", "automation", "llm", "product"],
+    stack: ["Electron", "JavaScript", "Baileys", "SQLite", "Gemini", "electron-builder"],
+    media: [
+      { label: "Comptes", expected: "Gestion multi-comptes et connexion par QR code", orientation: "landscape" },
+      { label: "Campagne", expected: "Création d’une campagne avec réécriture IA", orientation: "landscape" },
+      { label: "Historique", expected: "Historique des envois et statuts", orientation: "landscape" },
+    ],
   },
   {
-    id: "oneshot",
+    slug: "oneshot",
     number: "05",
-    theme: "delivery",
-    tag: "AGENTS IA · AUTOMATISATION WEB LOCALE",
-    title: "OneShot",
-    subtitle: "Faire de la recherche d’emploi un parcours pilotable.",
-    problem:
-      "La recherche d’emploi se disperse entre des onglets d’offres, des notes de suivi et des relances oubliées. On perd la vue d’ensemble de ce qui a été fait et de ce qui reste à faire.",
-    research:
-      "Le besoin est un poste de pilotage local : réunir la veille d’offres, l’analyse de correspondance avec un profil et le suivi des candidatures dans un seul endroit, sans perdre la main sur les décisions.",
-    decision:
-      "Séparer la collecte, l’évaluation et les actions navigateur. Chaque couche peut évoluer indépendamment, plateforme par plateforme, et aucune action n’est envoyée automatiquement sur une plateforme d’emploi.",
-    build: [
+    name: "OneShot",
+    kicker: "Agent de candidature · veille d’emploi",
+    tagline: "La recherche d’emploi, pilotée comme un système.",
+    accent: "#b49bff",
+    formation: "funnel",
+    role: "Conception, backend Python, automatisation navigateur, cockpit",
+    destination: {
+      label: "Voir le code source",
+      url: "https://github.com/Naoufalou/Oneshot",
+      note: "Dépôt public · application locale",
+    },
+    secondary: null,
+    problem: {
+      title: "Des dizaines d’offres, un CV à adapter à chacune.",
+      body: "La recherche d’emploi est répétitive. Les candidatures génériques passent mal les filtres, et l’automatisation naïve se fait bloquer par les plateformes.",
+    },
+    research: {
+      title: "Séparer voir, juger et agir.",
+      body: "J’ai étudié France Travail, LinkedIn, Indeed et la diversité des formulaires ATS pour séparer clairement la veille, l’évaluation et l’action.",
+      points: [
+        "Un catalogue de plateformes extensible, une stratégie par type de formulaire.",
+        "Un score d’adéquation sur 100, accompagné de son raisonnement.",
+        "Sessions de navigateur et cookies conservés uniquement sur la machine.",
+      ],
+    },
+    decisions: [
       {
-        title: "Collecte des offres",
-        detail:
-          "Une veille d’offres alimente une base locale, relue avant toute action.",
-        state: "Architecture publiée",
+        title: "Un pipeline en trois temps",
+        detail: "Veille temps réel, puis scoring par LLM (Gemini, OpenAI ou Ollama), puis action navigateur.",
       },
       {
-        title: "Analyse de correspondance",
-        detail:
-          "Le profil est confronté aux critères de l’offre pour produire une lecture, pas un score automatique.",
-        state: "Architecture publiée",
+        title: "Un comportement humain",
+        detail: "Moteur HumanActions : trajectoires de souris en courbes de Bézier, frappe et pauses naturelles, défilement progressif.",
       },
       {
-        title: "Suivi des candidatures",
-        detail:
-          "Un état par candidature, conservé localement, avec les étapes déjà engagées.",
-        state: "Architecture publiée",
-      },
-      {
-        title: "Actions navigateur assistées",
-        detail:
-          "La couche navigateur pilote un parcours déjà validé ; l’envoi sur les plateformes d’emploi reste une action explicite.",
-        state: "Règle de conception",
+        title: "Des documents par offre",
+        detail: "CV et lettre adaptés, générés en PDF puis téléversés au bon endroit du formulaire.",
       },
     ],
-    proof:
-      "Le dépôt est public et décrit une application locale : architecture Python/FastAPI, SQLite, Playwright et interface web. Le code est consultable en ligne.",
-    limits:
-      "L’application fonctionne en local et aucune capture d’interface n’est publiée. Aucune candidature envoyée ni aucun résultat de recrutement n’est revendiqué. Le schéma ci-contre est une illustration éditoriale, pas une capture.",
-    stack: ["Python", "FastAPI", "SQLite", "Playwright", "LLM"],
-    visual: "oneshot-schema",
-    visualLabel: "Schéma d’interface · illustration, pas une capture",
-    gallery: [],
-    destination: null,
-    destinationNote:
-      "Aucune destination publique confirmée. Un déploiement répond à l’adresse oneshot.vercel.app sans preuve d’appartenance : le lien n’est pas affiché.",
-    source: {
-      label: "Code source public",
-      url: "https://github.com/Naoufalou/Oneshot",
-    },
-    openQuestion:
-      "Lancer l’application en local et capturer l’interface, ou conserver ce schéma légendé. La vidéo de ce chapitre reste à créer.",
+    steps: [
+      { title: "Veille", detail: "Scanner temps réel des offres et notifications Telegram, Discord ou dans l’application." },
+      { title: "Analyse", detail: "Extraction des compétences du profil et Match Score expliqué." },
+      { title: "Documents", detail: "Génération de CV et de lettres avec pypdf et reportlab." },
+      { title: "Candidature", detail: "Playwright en un clic ou en lot par plateforme, avec détection des ATS." },
+      { title: "Cockpit", detail: "Tableau de bord FastAPI « Mode Zen » et suivi des candidatures envoyées." },
+    ],
+    proofs: [
+      "Code source public et architecture documentée dans un guide développeur.",
+      "Stockage local SQLite (WAL) des offres et des candidatures.",
+    ],
+    limits: [
+      "Application locale : aucune démo publique.",
+      "Aucune candidature envoyée ni résultat de recrutement n’est revendiqué ici.",
+    ],
+    result: "Un agent qui rapproche offres, profil et candidatures, en laissant l’utilisateur aux commandes.",
+    skills: ["python", "automation", "llm", "agents"],
+    stack: ["Python", "FastAPI", "Pydantic", "SQLite", "Playwright", "Gemini · OpenAI · Ollama", "reportlab"],
+    media: [
+      { label: "Cockpit", expected: "Tableau de bord « Mode Zen » avec les onglets de plateformes", orientation: "landscape" },
+      { label: "Match Score", expected: "Une offre avec son score et son explication", orientation: "landscape" },
+      { label: "Postulées", expected: "Onglet de suivi des candidatures", orientation: "landscape" },
+    ],
   },
 ];
 
-export const natureLabel: Record<StoryGalleryItem["nature"], string> = {
-  capture: "Capture réelle",
-  mockup: "Maquette d’illustration",
-  schema: "Schéma explicatif",
-  illustration: "Illustration éditoriale",
-};
+export const getStory = (slug: string) => stories.find((s) => s.slug === slug);
