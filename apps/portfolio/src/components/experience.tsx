@@ -31,7 +31,7 @@ const graphNodes: GraphNode[] = [
   { id: "skills", label: "COMPÉTENCES", radius: 16, tone: "work" },
   { id: "relations", label: "RELATIONS", radius: 19, tone: "memory" },
   { id: "history", label: "TRACES", radius: 14, tone: "proof" },
-].map((node, index) => ({
+].map<GraphNode>((node, index) => ({
   ...node,
   x: 320 + Math.cos(index * 0.82) * (72 + index * 14),
   y: 205 + Math.sin(index * 0.82) * (62 + index * 10),
