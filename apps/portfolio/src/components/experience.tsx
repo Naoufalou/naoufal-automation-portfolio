@@ -22,7 +22,7 @@ type GraphLink = SimulationLinkDatum<GraphNode> & {
   target: string | GraphNode;
 };
 
-const graphNodes: GraphNode[] = [
+const graphSeeds: GraphNode[] = [
   { id: "myriaz", label: "MYRIAZ", radius: 37, tone: "core", fx: 320, fy: 205 },
   { id: "knowledge", label: "CONNAISSANCE", radius: 20, tone: "memory" },
   { id: "projects", label: "PROJETS", radius: 17, tone: "work" },
@@ -31,7 +31,8 @@ const graphNodes: GraphNode[] = [
   { id: "skills", label: "COMPÉTENCES", radius: 16, tone: "work" },
   { id: "relations", label: "RELATIONS", radius: 19, tone: "memory" },
   { id: "history", label: "TRACES", radius: 14, tone: "proof" },
-].map<GraphNode>((node, index) => ({
+];
+const graphNodes = graphSeeds.map((node, index) => ({
   ...node,
   x: 320 + Math.cos(index * 0.82) * (72 + index * 14),
   y: 205 + Math.sin(index * 0.82) * (62 + index * 10),
