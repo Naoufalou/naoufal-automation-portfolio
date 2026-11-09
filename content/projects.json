@@ -1620,13 +1620,13 @@
   },
   {
     "id": "A27",
-    "name": "Bouchon — Application d’autopartage",
-    "description": "Application mobile d’autopartage avec gestion des véhicules, demandes de réservation et parcours de partage. La version web et la landing sont publiées ; l’exécution native iOS/Android n’a pas été confirmée.",
+    "name": "Bouchon · For4 — autopartage mensuel",
+    "description": "Application mobile et landing d’autopartage mensuel en Île-de-France : un groupe loue ensemble une voiture, partage le loyer, un planning commun, des trajets et des courses regroupés. Démo web et landing publiées ; l’exécution native iOS/Android n’a pas été confirmée.",
     "stack": "React Native, Expo SDK 57, TypeScript, expo-router, Zustand, AsyncStorage",
     "slug": "bouchon-autopartage",
     "category": "Applications & IA",
     "featured": true,
-    "demo": "https://bouchon-demo.vercel.app/",
+    "demo": "https://bouchon-steel.vercel.app/",
     "source": "",
     "status": "Démo web publiée · natif à valider",
     "need": "Organiser le partage de véhicules et le parcours de réservation entre utilisateurs.",
@@ -1635,7 +1635,7 @@
       "Gérer l’état de l’application avec un store et une persistance locale.",
       "Proposer une carte et un parcours web de démonstration ; validation mobile native encore ouverte."
     ],
-    "value": "TypeScript, tests du domaine et export web vérifiés sur le dernier état inspecté. Les tests natifs et les fonctions serveur ne sont pas présentés comme validés.",
+    "value": "TypeScript, tests du domaine (84 Jest) et export web vérifiés. Landing For4 publiée avec captures du simulateur iOS. Les tests natifs et les fonctions serveur ne sont pas présentés comme validés. Démo web de l’application : bouchon-demo.vercel.app.",
     "steps": [
       {
         "title": "Définir les règles métier",
@@ -1659,6 +1659,36 @@
       }
     ],
     "gallery": [
+      {
+        "src": "/project-visuals/for4-accueil.webp",
+        "alt": "Accueil de la landing For4 : une voiture, à plusieurs, pour de vrai",
+        "caption": "Landing For4 · accueil",
+        "kind": "capture"
+      },
+      {
+        "src": "/project-visuals/for4-principe.webp",
+        "alt": "Principe For4 : un véhicule pour le groupe, un loyer réparti, trois étapes",
+        "caption": "Landing For4 · le principe",
+        "kind": "capture"
+      },
+      {
+        "src": "/project-visuals/for4-usages.webp",
+        "alt": "Trajets du quotidien et courses regroupées avec For4",
+        "caption": "Landing For4 · trajets et tâches mutualisés",
+        "kind": "capture"
+      },
+      {
+        "src": "/project-visuals/for4-apercu.webp",
+        "alt": "Captures du simulateur iOS : espace propriétaire, planning mensuel, trajets et tâches",
+        "caption": "Simulateur iOS · propriétaire, planning, trajets",
+        "kind": "capture"
+      },
+      {
+        "src": "/project-visuals/for4-proprietaire.webp",
+        "alt": "Parcours propriétaire For4 : publier, convenir, suivre",
+        "caption": "Landing For4 · le propriétaire",
+        "kind": "capture"
+      },
       {
         "src": "/project-visuals/bouchon-contact-sheet.jpg",
         "alt": "Planche de huit écrans de la démonstration Bouchon : accueil, calendrier, réservations, groupe et espace propriétaire",
