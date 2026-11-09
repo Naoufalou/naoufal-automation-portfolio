@@ -3,12 +3,46 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { skills, type Story } from "../../lib/stories";
 import MediaFrame from "./media-frame";
 import VoxelField from "./voxel-field";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
+
+const RAIL = [
+  ["probleme", "Problème"],
+  ["recherche", "Recherche"],
+  ["choix", "Choix"],
+  ["realisation", "Réalisation"],
+  ["preuves", "Preuves"],
+  ["resultat", "Résultat"],
+] as const;
+
+function SectionRail() {
+  const [active, setActive] = useState<string>(RAIL[0][0]);
+  useEffect(() => {
+    const els = RAIL.map(([id]) => document.getElementById(id)).filter(Boolean) as HTMLElement[];
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => e.isIntersecting && setActive(e.target.id));
+      },
+      { rootMargin: "-40% 0px -55% 0px" },
+    );
+    els.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, []);
+  return (
+    <nav className="cs-secnav" aria-label="Sections de l’étude de cas">
+      {RAIL.map(([id, label]) => (
+        <a key={id} href={`#${id}`} className={active === id ? "is-active" : ""} aria-current={active === id ? "true" : undefined}>
+          <i aria-hidden="true" />
+          <span>{label}</span>
+        </a>
+      ))}
+    </nav>
+  );
+}
 
 type Neighbor = { slug: string; name: string; number: string } | null;
 
@@ -54,6 +88,7 @@ export default function CaseStudy({ story, prev, next }: { story: Story; prev: N
         <i />
       </div>
 
+      <SectionRail />
       <header className="cs-hero">
         <span className="cs-hero-num" aria-hidden="true">{story.number}</span>
         <a className="cs-back" href={`/#chapitre-${story.slug}`} data-intro>
@@ -95,13 +130,13 @@ export default function CaseStudy({ story, prev, next }: { story: Story; prev: N
         </dl>
       </header>
 
-      <section className="cs-section cs-split">
+      <section className="cs-section cs-split" id="probleme">
         <div data-reveal>
           <p className="vx-label">01 · Le problème</p>
           <h2>{story.problem.title}</h2>
           <p className="vx-body">{story.problem.body}</p>
         </div>
-        <div data-reveal>
+        <div data-reveal id="recherche">
           <p className="vx-label">02 · La recherche</p>
           <h2>{story.research.title}</h2>
           <p className="vx-body">{story.research.body}</p>
@@ -113,7 +148,7 @@ export default function CaseStudy({ story, prev, next }: { story: Story; prev: N
         </div>
       </section>
 
-      <section className="cs-section">
+      <section className="cs-section" id="choix">
         <p className="vx-label" data-reveal>
           03 · Les choix de conception
         </p>
@@ -128,7 +163,7 @@ export default function CaseStudy({ story, prev, next }: { story: Story; prev: N
         </div>
       </section>
 
-      <section className="cs-section cs-build">
+      <section className="cs-section cs-build" id="realisation">
         <p className="vx-label" data-reveal>
           04 · La réalisation
         </p>
@@ -151,7 +186,7 @@ export default function CaseStudy({ story, prev, next }: { story: Story; prev: N
         </div>
       </section>
 
-      <section className="cs-section">
+      <section className="cs-section" id="preuves">
         <p className="vx-label" data-reveal>
           05 · Les preuves
         </p>
@@ -169,7 +204,7 @@ export default function CaseStudy({ story, prev, next }: { story: Story; prev: N
         </div>
       </section>
 
-      <section className="cs-section cs-result">
+      <section className="cs-section cs-result" id="resultat">
         <p className="vx-label" data-reveal>
           06 · Le résultat
         </p>

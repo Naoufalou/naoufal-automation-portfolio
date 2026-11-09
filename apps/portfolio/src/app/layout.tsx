@@ -19,20 +19,22 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr">
       <body>
+        <a className="skip-link" href="#contenu">Aller au contenu</a>
         <header className="nav">
           <a className="brand" href="/">
             naoufal<span>®</span>
           </a>
           <nav>
-            <a href="/realisations">Réalisations</a>
-            <a href="/profil">Profil</a>
-            <a href="/#approche">Approche</a>
+            <a href="/#profil">Profil</a>
+            <a href="/#chapitre-qwerty-myriaz">Projets phares</a>
+            <a href="/realisations">Catalogue</a>
+            <a href="/#approche">Méthode</a>
             <a className="nav-cta" href="/contact">
               Parlons projet <span>↗</span>
             </a>
           </nav>
         </header>
-        {children}
+        <div id="contenu">{children}</div>
         <footer>
           <a className="brand" href="/">
             naoufal<span>®</span>
