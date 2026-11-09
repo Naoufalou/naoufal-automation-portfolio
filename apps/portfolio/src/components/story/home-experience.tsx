@@ -385,9 +385,17 @@ export default function HomeExperience() {
             Je construis des systèmes qui se souviennent, agissent <em>et se prouvent.</em>
           </h1>
           <p className="vx-lead" data-intro>
-            Mémoire d’agents, mondes 3D pilotés par l’IA, applications mobiles et desktop : cinq projets racontés de la
-            question de départ jusqu’aux preuves.
+            Titulaire d’un Master 2 Data Science, je conçois et livre des agents IA, des applications et des automatisations
+            pour des clients et des produits : cinq projets racontés de la question de départ jusqu’aux preuves.
           </p>
+          <div className="vx-actions" data-intro>
+            <a className="vx-btn vx-btn-primary" href="mailto:naoufal.ou7@gmail.com?subject=Mission%20freelance">
+              Me proposer une mission <span aria-hidden="true">↗</span>
+            </a>
+            <a className="vx-btn" href="/cv-naoufal-ou.pdf" download>
+              Télécharger mon CV <span aria-hidden="true">↓</span>
+            </a>
+          </div>
           <nav className="vx-index" aria-label="Chapitres" data-intro>
             {stories.map((s) => (
               <a key={s.slug} href={`#chapitre-${s.slug}`} style={{ "--accent": s.accent } as React.CSSProperties}>
@@ -439,6 +447,73 @@ export default function HomeExperience() {
           </ul>
         </div>
         <SkillsGraph />
+      </section>
+
+      <section className="vx-profile" id="profil" data-formation="core" data-accent="#c6f58a" data-number="00" data-name="Profil">
+        <p className="vx-eyebrow">Profil · disponible pour missions freelance</p>
+        <h2>
+          Data science, agents IA et produits <em>livrés.</em>
+        </h2>
+        <p className="vx-profile-lead">
+          Master 2 Data Science, entrepreneur et développeur IA. J’interviens de bout en bout : cadrage du besoin,
+          architecture, développement, tests et mise en production. Mes réalisations sont publiques, testées et leurs
+          limites sont écrites.
+        </p>
+        <div className="vx-profile-grid">
+          <article className="vx-profile-card">
+            <h3>Formation</h3>
+            <p>
+              <b>Master 2 Data Science</b>
+              <br />
+              Data science et génie logiciel : modélisation, machine learning, ingénierie des données.
+            </p>
+          </article>
+          <article className="vx-profile-card">
+            <h3>IA & Data</h3>
+            <ul>
+              {["Agents LLM", "Orchestration", "MCP", "RAG & mémoire", "Ollama / modèles locaux", "Machine learning", "Voix STT/TTS"].map((x) => (
+                <li key={x}>{x}</li>
+              ))}
+            </ul>
+          </article>
+          <article className="vx-profile-card">
+            <h3>Développement</h3>
+            <ul>
+              {["Python", "FastAPI", "TypeScript", "React", "Next.js", "Electron", "React Native", "Three.js", "SQLite", "Supabase"].map((x) => (
+                <li key={x}>{x}</li>
+              ))}
+            </ul>
+          </article>
+          <article className="vx-profile-card">
+            <h3>Automatisation</h3>
+            <ul>
+              {["n8n", "Playwright", "WhatsApp (Baileys)", "Shopify", "Notion", "Scraping", "Intégrations API"].map((x) => (
+                <li key={x}>{x}</li>
+              ))}
+            </ul>
+          </article>
+          <article className="vx-profile-card">
+            <h3>Ce que je peux faire pour vous</h3>
+            <p>Agents et automatisations sur mesure, applications IA (web, mobile, desktop), outils de prospection et pipelines de données.</p>
+          </article>
+        </div>
+        <div className="vx-proof-row">
+          <span>745 tests · QWERTY × Myriaz</span>
+          <span>26/26 tests · IAPAS-Game</span>
+          <span>84 tests · Bouchon</span>
+          <span>Produit publié · pixelcreate.io</span>
+        </div>
+        <div className="vx-profile-contact">
+          <a className="vx-btn vx-btn-primary" href="mailto:naoufal.ou7@gmail.com">
+            naoufal.ou7@gmail.com <span aria-hidden="true">↗</span>
+          </a>
+          <a className="vx-btn" href="https://www.linkedin.com/in/naoufal-ou-14a071150" target="_blank" rel="noreferrer">
+            LinkedIn ↗
+          </a>
+          <a className="vx-btn" href="https://github.com/Naoufalou" target="_blank" rel="noreferrer">
+            GitHub ↗
+          </a>
+        </div>
       </section>
 
       {stories.map((story) => (

@@ -9,6 +9,8 @@ export type StoryMedia = {
   /** Écran attendu, affiché tant que la capture n'a pas été fournie. */
   expected: string;
   src?: string;
+  /** Vidéo de présentation (MP4 dans /public/project-videos), jouée en boucle avec `src` comme affiche. */
+  video?: string;
   /** Origine de la capture, affichée en légende. */
   origin?: string;
   orientation: "portrait" | "landscape";
@@ -124,6 +126,14 @@ export const stories: Story[] = [
     stack: ["Python 3.12", "FastAPI", "SQLite", "OpenTelemetry", "MCP", "React", "TypeScript", "WebSocket", "Vitest"],
     media: [
       {
+        label: "Présentation",
+        expected: "Vidéo de présentation",
+        src: "/project-visuals/qwerty-starmap-hero.png",
+        video: "/project-videos/qwerty-myriaz.mp4",
+        origin: "Vidéo de présentation · Hyperframes",
+        orientation: "landscape",
+      },
+      {
         label: "Focus projet",
         expected: "Focus projet",
         src: "/project-visuals/qwerty-starmap-graph.png",
@@ -200,6 +210,14 @@ export const stories: Story[] = [
     skills: ["agents", "systems", "llm", "realtime3d", "typescript", "reliability", "product"],
     stack: ["TypeScript", "Node.js", "LangGraph", "SQLite WAL", "Hermes Agent", "Ollama", "React Three Fiber", "SSE"],
     media: [
+      {
+        label: "Présentation",
+        expected: "Vidéo de présentation",
+        src: "/project-visuals/iapas-monde-village.png",
+        video: "/project-videos/iapas-game.mp4",
+        origin: "Vidéo de présentation · Hyperframes",
+        orientation: "landscape",
+      },
       { label: "Cockpit 3D", expected: "Vue d’ensemble de la scène 3D avec les agents", orientation: "landscape" },
       { label: "Mission en cours", expected: "Tiroir opérationnel ouvert sur une mission", orientation: "landscape" },
       { label: "Validation humaine", expected: "Popup Accepter / Modifier / Refuser", orientation: "landscape" },
@@ -269,6 +287,14 @@ export const stories: Story[] = [
     stack: ["React Native", "Expo SDK 57", "TypeScript", "expo-router", "Zustand", "AsyncStorage", "Jest"],
     media: [
       {
+        label: "Présentation",
+        expected: "Vidéo de présentation",
+        src: "/project-visuals/bouchon-home.webp",
+        video: "/project-videos/bouchon.mp4",
+        origin: "Vidéo de présentation · Hyperframes",
+        orientation: "landscape",
+      },
+      {
         label: "Accueil",
         expected: "Accueil",
         src: "/project-visuals/bouchon-home.webp",
@@ -294,68 +320,89 @@ export const stories: Story[] = [
   {
     slug: "pixelcreate",
     number: "04",
-    name: "PixelCreate",
-    kicker: "Application desktop · prospection WhatsApp assistée par IA",
-    tagline: "Prospecter à plusieurs voix, sans mettre ses numéros en danger.",
+    name: "PixelCreate · MYRIAZ GROWTH",
+    kicker: "Application macOS · prospection sortante e-mail + LinkedIn pilotée par IA",
+    tagline: "Votre prospection sortante, pilotée depuis votre Mac.",
     accent: "#ff8ad8",
     formation: "bubbles",
-    role: "Produit, application Electron, moteur de messagerie, distribution",
+    role: "Produit, application desktop, moteur de séquences, distribution",
     destination: {
-      label: "Voir la page produit",
-      url: "https://naoufal30.gumroad.com/l/gjugsq",
-      note: "Application macOS et Windows",
+      label: "Voir pixelcreate.io",
+      url: "https://pixelcreate.io",
+      note: "Page produit · accès sur demande, installation guidée",
     },
     secondary: {
-      label: "Dépôt public",
+      label: "Première version WhatsApp",
       url: "https://github.com/Naoufalou/Pixelcreate-AutoWhatsapp",
-      note: "Présentation et téléchargement",
+      note: "Dépôt public · moteur Baileys",
     },
     problem: {
-      title: "La prospection WhatsApp est répétitive, et l’automatiser naïvement coûte des numéros.",
-      body: "Copier-coller un même message à des dizaines de contacts prend du temps, paraît générique et expose les comptes aux blocages.",
+      title: "La personnalisation fait répondre, mais elle ne passe pas à l’échelle à la main.",
+      body: "Prospecter soi-même, c’est écrire des dizaines de messages sur deux canaux, ne pas relancer quelqu’un qui a déjà répondu et risquer de perdre l’historique. Les outils d’équipes SDR sont surdimensionnés pour une personne seule.",
     },
     research: {
-      title: "Changer de couche plutôt qu’empiler des rustines.",
-      body: "La première version pilotait des webviews Chromium : instable et gourmand. J’ai réécrit le moteur sur le protocole multi-appareils, où l’application est vue comme un appareil compagnon.",
+      title: "Un outil pour une personne, pas pour une équipe de SDR.",
+      body: "PixelCreate est né d’une première application WhatsApp dont le moteur a dû être réécrit sur le protocole multi-appareils. MYRIAZ GROWTH en reprend les leçons : garde-fous par défaut, humain dans la boucle, données chez l’utilisateur.",
       points: [
-        "Sessions isolées par compte, stockées localement.",
-        "Cadence humaine : indicateur de frappe et délai proportionnel à la longueur du message.",
-        "Quotas quotidiens par numéro et bascule automatique entre comptes.",
+        "Les fichiers de prospects restent sur l’ordinateur de l’utilisateur ; rien n’est hébergé côté éditeur.",
+        "Chaque message s’écrit d’après l’historique de contact, tous canaux confondus.",
+        "Deux niveaux d’autonomie par campagne : « validation d’abord » (par défaut) ou « autonome » dans des limites fixées.",
       ],
     },
     decisions: [
       {
-        title: "Moteur multi-appareils natif",
-        detail: "Abandon des webviews pour un client headless (Baileys) : plus stable et beaucoup plus léger en mémoire.",
+        title: "Contrôles avant envoi",
+        detail: "Import CSV puis vérification des doublons, désinscriptions et exclusions avant tout message.",
       },
       {
-        title: "Un message unique par contact",
-        detail: "L’IA (Gemini ou modèle local) reformule chaque message ; les pièces jointes partent avec la légende personnalisée.",
+        title: "Séquences multicanales qui s’arrêtent à la réponse",
+        detail: "E-mail seul, LinkedIn seul ou mixte, avec étapes, délais et conditions ; la séquence s’arrête dès la première réponse.",
       },
       {
-        title: "Des garde-fous par défaut",
-        detail: "Rotation des expéditeurs, 30 messages par jour et par numéro recommandés, pauses aléatoires.",
+        title: "Des garde-fous visibles",
+        detail: "Plafond d’envois quotidien, jours et horaires ouvrés, listes d’exclusion, mots-clés qui passent la main à l’humain, bouton de pause global et journal complet des actions.",
+      },
+      {
+        title: "Modèles et clés au choix",
+        detail: "Anthropic, OpenAI, Gemini ou OpenRouter avec la clé de l’utilisateur, stockée dans le Trousseau macOS ; envoi via Smartlead, LinkedIn via Phantombuster, CRM HubSpot ou Pipedrive.",
       },
     ],
     steps: [
-      { title: "Prototype", detail: "Client Electron à webviews pour valider le parcours de campagne." },
-      { title: "Réécriture du moteur", detail: "Passage au protocole multi-appareils, cache de QR code, sessions isolées." },
-      { title: "Campagnes", detail: "Import CSV/TXT, pièces jointes, historique détaillé de chaque envoi." },
-      { title: "Préchauffage", detail: "Conversations entre comptes connectés pour entretenir leur activité." },
-      { title: "Distribution", detail: "Installateurs macOS et Windows, mises à jour automatiques, page produit." },
+      { title: "Version WhatsApp", detail: "Client Electron puis moteur Baileys : sessions isolées, cadence humaine, quotas par numéro." },
+      { title: "Moteur de séquences", detail: "Étapes, délais, conditions, arrêt à la première réponse, deux modes d’autonomie." },
+      { title: "Tableau de bord", detail: "Taux de réponse par poste, secteur, taille d’entreprise, canal et étape ; coût IA par rendez-vous. Aucun chiffre affiché sans données." },
+      { title: "Distribution", detail: "Application macOS (v0.1) livrée avec une installation guidée en visio sur de vrais prospects." },
     ],
-    proofs: ["Application packagée pour macOS (.dmg) et Windows (.exe).", "Page produit publique en ligne."],
+    proofs: [
+      "Application macOS packagée et page produit publique : pixelcreate.io.",
+      "Première version WhatsApp livrée en installateurs macOS (.dmg) et Windows (.exe).",
+    ],
     limits: [
-      "Aucun volume d’envoi, taux de réponse ni chiffre de vente n’est revendiqué ici.",
-      "L’usage doit respecter les conditions de WhatsApp et le consentement des destinataires.",
+      "Aucun taux de réponse, rendez-vous ni retour sur investissement n’est garanti ni revendiqué.",
+      "L’automatisation LinkedIn peut enfreindre ses conditions d’utilisation et exposer le compte à des restrictions ; l’utilisateur reste responsable de la conformité de sa prospection.",
+      "macOS uniquement ; Windows en préparation.",
     ],
-    result: "Une application desktop distribuée, née d’une refonte d’architecture motivée par la stabilité.",
-    skills: ["desktop", "automation", "llm", "product"],
-    stack: ["Electron", "JavaScript", "Baileys", "SQLite", "Gemini", "electron-builder"],
+    result: "Un produit desktop de prospection où l’IA rédige, mais où l’utilisateur garde le contrôle des limites et peut tout arrêter d’un bouton.",
+    skills: ["desktop", "automation", "llm", "product", "reliability"],
+    stack: ["Electron", "TypeScript", "Baileys", "SQLite", "Anthropic · OpenAI · Gemini", "Smartlead", "Phantombuster", "Trousseau macOS"],
     media: [
-      { label: "Comptes", expected: "Gestion multi-comptes et connexion par QR code", orientation: "landscape" },
-      { label: "Campagne", expected: "Création d’une campagne avec réécriture IA", orientation: "landscape" },
-      { label: "Historique", expected: "Historique des envois et statuts", orientation: "landscape" },
+      {
+        label: "Présentation",
+        expected: "Vidéo de présentation",
+        src: "/project-visuals/pixelcreate-product-mockup.png",
+        video: "/project-videos/pixelcreate.mp4",
+        origin: "Vidéo de présentation · Hyperframes",
+        orientation: "landscape",
+      },
+      {
+        label: "Page produit",
+        expected: "Page produit pixelcreate.io",
+        src: "/project-visuals/pixelcreate-product-mockup.png",
+        origin: "Visuel produit · pixelcreate.io",
+        orientation: "landscape",
+      },
+      { label: "Campagne", expected: "Séquence e-mail + LinkedIn avec ses étapes", orientation: "landscape" },
+      { label: "Tableau de bord", expected: "Taux de réponse par canal et coût IA par rendez-vous", orientation: "landscape" },
     ],
   },
   {

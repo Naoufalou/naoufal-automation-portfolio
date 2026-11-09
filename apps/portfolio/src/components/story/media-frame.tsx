@@ -16,7 +16,9 @@ export default function MediaFrame({ media, priority = false }: { media: StoryMe
           </div>
         )}
         <div className="media-screen">
-          {media.src ? (
+          {media.video ? (
+            <video src={media.video} poster={media.src} autoPlay loop muted playsInline preload="metadata" aria-label={`${media.label} — vidéo de présentation`} />
+          ) : media.src ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img
               src={media.src}
@@ -35,7 +37,7 @@ export default function MediaFrame({ media, priority = false }: { media: StoryMe
         </div>
       </div>
       <figcaption>
-        <span>{media.src ? "Capture réelle" : "En attente"}</span>
+        <span>{media.video ? "Vidéo" : media.src ? "Capture réelle" : "En attente"}</span>
         {media.src ? media.origin : media.expected}
       </figcaption>
     </figure>
