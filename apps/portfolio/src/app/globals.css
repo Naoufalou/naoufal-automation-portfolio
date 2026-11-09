@@ -1399,3 +1399,10 @@ textarea {
 .proof-grid-detail{grid-template-columns:1fr}
 }
 @media(prefers-reduced-motion:reduce){.horizon-track{scroll-behavior:auto}.horizon-panel{transition:none}.proof-frame img{transition:none}}
+
+/* Navigation globale */
+.skip-link{position:absolute;left:-999px;top:8px;background:#c6f58a;color:#0a0c10;padding:8px 14px;border-radius:8px;z-index:200}
+.skip-link:focus{left:12px}
+a:focus-visible,button:focus-visible,[role="button"]:focus-visible{outline:2px solid #c6f58a;outline-offset:3px;border-radius:6px}
+.nav{position:sticky;top:0;z-index:100;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg,#0a0c10) 78%,transparent)}
+@media (max-width:760px){.nav nav a:not(.nav-cta){display:none}.nav{height:72px}}

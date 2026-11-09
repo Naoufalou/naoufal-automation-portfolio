@@ -744,12 +744,12 @@
   {
     "id": "A04",
     "name": "Whatsbound / Multi-prospect / Pixelcreate",
-    "description": "Famille de clients desktop de campagnes et de prospection. Variantes goth outreach, démonstration investisseurs, extension Chrome et pages commerciales.",
+    "description": "Premières générations de PixelCreate : clients desktop de campagnes WhatsApp (Electron, Baileys), variantes et extension Chrome. Leur moteur a servi de base à MYRIAZ GROWTH (voir pixelcreate.io).",
     "stack": "Electron, JavaScript, Playwright, Baileys, SQLite",
     "slug": "a04",
     "category": "Applications & IA",
     "featured": false,
-    "demo": "",
+    "demo": "https://pixelcreate.io",
     "source": "",
     "status": "En développement",
     "need": "",
@@ -871,7 +871,7 @@
   {
     "id": "A07",
     "name": "Gravity System / PixelCreate 3.0",
-    "description": "Application de prospection : pages analytics, audit, base, inbox ; modules de scraping, personnalisation et email. Plusieurs générations locales.",
+    "description": "Application de prospection : pages analytics, audit, base, inbox ; modules de scraping, personnalisation et email. Plusieurs générations locales. Étape de la lignée PixelCreate → MYRIAZ GROWTH (pixelcreate.io).",
     "stack": "Next.js, TypeScript, React, Electron, Crawlee, Playwright, Supabase, Prisma",
     "slug": "a07",
     "category": "Applications & IA",
@@ -904,7 +904,7 @@
   {
     "id": "A08",
     "name": "Pixelcreate 2 / ProspectionVente1",
-    "description": "Interfaces de leads, tableaux de bord et visualisations 3D. Variantes pixelcreate2, copies et prospectionvente1.",
+    "description": "Interfaces de leads, tableaux de bord et visualisations 3D. Variantes pixelcreate2, copies et prospectionvente1. Étape de la lignée PixelCreate → MYRIAZ GROWTH (pixelcreate.io).",
     "stack": "React, Next.js/Vite, TypeScript/JavaScript, Three.js, Gemini",
     "slug": "a08",
     "category": "Applications & IA",
@@ -1539,45 +1539,84 @@
   },
   {
     "id": "A26",
-    "name": "PixelCreate — Lead Responder, AI Inbox & Follow-up",
-    "description": "Refonte locale d’une vitrine pour PME autour de trois automatisations commerciales : réponse aux prospects, tri des demandes et relances. Le formulaire d’éligibilité et le calculateur sont des prototypes navigateur ; aucun backend ni paiement n’est configuré.",
-    "stack": "HTML, CSS, JavaScript ; déploiement Cloudflare non effectué",
+    "name": "PixelCreate · MYRIAZ GROWTH — prospection e-mail + LinkedIn",
+    "description": "Application macOS de prospection sortante pilotée par IA : import CSV, séquences e-mail + LinkedIn qui s’arrêtent à la première réponse, mode « validation d’abord » ou « autonome », garde-fous et tableau de bord. Vos clés et vos données restent sur votre Mac.",
+    "stack": "Electron, TypeScript, FastAPI, SQLite, Anthropic / OpenAI / Gemini, Smartlead, Phantombuster",
     "slug": "pixelcreate-lead-os",
     "category": "Applications & IA",
     "featured": true,
-    "demo": "",
-    "source": "https://github.com/Naoufalou/Pixelcreate",
-    "status": "Prototype local",
-    "need": "Aider une PME à traiter plus vite les demandes entrantes et réduire les relances oubliées.",
+    "demo": "https://pixelcreate.io",
+    "source": "",
+    "status": "Application macOS v0.1 · accès sur demande",
+    "need": "Permettre à une personne qui prospecte elle-même de tenir deux canaux sans perdre l’historique, sans relancer quelqu’un qui a répondu et sans quitter son ordinateur.",
     "features": [
-      "Présenter Lead Responder, AI Inbox et Follow-up Agent dans un parcours commercial lisible.",
-      "Prototyper une démo produit, un calculateur ROI illustratif et un questionnaire d’éligibilité côté navigateur.",
-      "Prévoir les états de confiance, la validation humaine et la connexion future aux services sans prétendre qu’ils sont actifs."
+      "Importer des prospects (CSV) et contrôler doublons, désinscriptions et exclusions avant tout envoi.",
+      "Composer des séquences e-mail, LinkedIn ou mixtes avec étapes, délais et conditions ; la séquence s’arrête à la première réponse.",
+      "Deux modes par campagne : validation d’abord (par défaut) ou autonome, avec plafond quotidien, horaires, mots-clés d’escalade, pause globale et journal des actions.",
+      "Mesurer les réponses par poste, secteur, canal et étape, et le coût d’IA par rendez-vous ; « Pas de données » quand il n’y en a pas.",
+      "Choisir son modèle (Anthropic, OpenAI, Gemini, OpenRouter) ; clés stockées dans le Trousseau macOS."
     ],
-    "value": "Prototype de vitrine et de parcours de conversion. L’authentification Cloudflare, le backend, les envois et les paiements restent à connecter.",
+    "value": "Produit publié sur pixelcreate.io. Parcours simulé de bout en bout vérifié (39 tests e2e sur 39, 424 tests backend) ; les captures montrent des données de démonstration et un LinkedIn simulé. Aucun taux de réponse ni retour sur investissement n’est revendiqué.",
     "steps": [
       {
-        "title": "Auditer le périmètre disponible",
-        "detail": "Le dépôt Git identifié était incomplet ; la refonte a été préparée dans un dossier de travail statique séparé.",
-        "state": "Audit documenté"
+        "title": "Version WhatsApp",
+        "detail": "Client Electron puis moteur Baileys : sessions isolées, cadence humaine, quotas par numéro.",
+        "state": "Livrée (macOS, Windows)"
       },
       {
-        "title": "Clarifier la promesse",
-        "detail": "Positionner le site sur la réponse aux prospects, le tri de la boîte de réception et les relances.",
-        "state": "Réalisé dans le prototype"
+        "title": "Moteur de séquences",
+        "detail": "Étapes, conditions, arrêt à la première réponse, deux modes d’autonomie, garde-fous.",
+        "state": "Réalisé et testé en simulation"
       },
       {
-        "title": "Construire la vitrine",
-        "detail": "Créer les sections produit, la démo, le calculateur ROI et le questionnaire côté navigateur.",
-        "state": "Prototype local"
+        "title": "Interface et tableau de bord",
+        "detail": "Assistant de démarrage, composeur de séquence, boîte de réponses, page Performance.",
+        "state": "Réalisé · captures réelles"
       },
       {
-        "title": "Préparer la mise en ligne",
-        "detail": "Vérifier la configuration Cloudflare et les intégrations ; aucun déploiement ni paiement réel n’est confirmé.",
-        "state": "À connecter / publier"
+        "title": "Distribution",
+        "detail": "Application macOS v0.1 et page produit pixelcreate.io ; installation guidée sur de vrais prospects.",
+        "state": "Publié · accès sur demande"
       }
     ],
-    "gallery": []
+    "gallery": [
+      {
+        "src": "/project-visuals/myriaz-dashboard.webp",
+        "alt": "Tableau de bord MYRIAZ GROWTH : messages envoyés, taux de réponse, réponses à traiter",
+        "caption": "Tableau de bord · données de démonstration",
+        "kind": "capture"
+      },
+      {
+        "src": "/project-visuals/myriaz-sequence.webp",
+        "alt": "Composeur de séquence LinkedIn : étapes, délais, conditions, mode validation ou autonome et limites",
+        "caption": "Composeur de séquence · validation ou autonome, limites",
+        "kind": "capture"
+      },
+      {
+        "src": "/project-visuals/myriaz-chronologie.webp",
+        "alt": "Chronologie de campagne : la réponse d’un prospect arrête la séquence",
+        "caption": "Chronologie · la réponse arrête la séquence",
+        "kind": "capture"
+      },
+      {
+        "src": "/project-visuals/myriaz-boite.webp",
+        "alt": "Boîte de réponses avec fiche contact et brouillon assisté par IA",
+        "caption": "Boîte de réponses · qualification IA proposée, jamais imposée",
+        "kind": "capture"
+      },
+      {
+        "src": "/project-visuals/myriaz-performance.webp",
+        "alt": "Page Performance avec « Pas de données » plutôt qu’un zéro inventé",
+        "caption": "Performance · aucun chiffre inventé",
+        "kind": "capture"
+      },
+      {
+        "src": "/project-visuals/myriaz-sequence-clair.webp",
+        "alt": "Composeur de séquence en thème clair",
+        "caption": "Thème clair",
+        "kind": "capture"
+      }
+    ]
   },
   {
     "id": "A27",
