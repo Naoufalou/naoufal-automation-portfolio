@@ -627,14 +627,6 @@ export const stories: Story[] = [
     stack: ["Python", "FastAPI", "SQLite", "Playwright", "Gemini · OpenAI · Ollama", "Trousseau macOS", "pywebview"],
     media: [
       {
-        label: "Présentation",
-        expected: "Présentation",
-        src: "/project-visuals/oneshot-accueil.webp",
-        video: "/project-videos/oneshot.mp4",
-        origin: "Vidéo de présentation · Hyperframes · captures de l’application",
-        orientation: "landscape",
-      },
-      {
         label: "Accueil : priorités du jour",
         expected: "Accueil : priorités du jour",
         src: "/project-visuals/oneshot-accueil.webp",
